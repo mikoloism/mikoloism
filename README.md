@@ -62,8 +62,8 @@
 
 <!-- stats -->
 
-[github-stats]: https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green
-[github-top-languages]: https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=blue-green
+[github-stats]: https://github-readme-stats.vercel.app/api?username=miko-github&theme=white-black
+[github-top-languages]: https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=white-black
 
 <!-- badges -->
 
