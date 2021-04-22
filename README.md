@@ -12,7 +12,7 @@
 [![uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)][1]
 [![makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)][1]
 
-## States
+## Stats
 
 [![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)][1]
 [![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=blue-green)][1]
