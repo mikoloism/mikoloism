@@ -14,19 +14,13 @@
 [![uses-js][badge-use-js]][social-github]
 [![makes-people-smile][badge-smile]][social-github]
 
-## Stats
-
-[![github stats][github-stats]][social-github]
-[![top languages][github-top-languages]][social-github]
-
 <!-- ## Projects (repo) -->
 
 ## Skills
-
+![javascript][skills-js-dark]\
 ![html5][skills-html5]
 ![css3][skills-css3]
 ![scss][skills-sass]
-![javascript][skills-js-dark]
 ![pug-js][skills-pugjs]\
 ![node-js][skills-nodejs]
 ![express-js][skills-expressjs]
@@ -47,6 +41,12 @@
 ![vscode][tools-vscode]
 ![git][tools-git]
 ![postman][tools-postman]
+
+## Stats
+
+[![github stats][github-stats]][social-github]
+[![top languages][github-top-languages]][social-github]
+
 
 ## Follow me at
 
