@@ -14,11 +14,6 @@
 [![uses-js][badge-use-js]][social-github]
 [![makes-people-smile][badge-smile]][social-github]
 
-## Stats
-
-[![github stats][github-stats]][social-github]
-[![top languages][github-top-languages]][social-github]
-
 <!-- ## Projects (repo) -->
 
 ## Skills
@@ -47,6 +42,12 @@
 ![vscode][tools-vscode]
 ![git][tools-git]
 ![postman][tools-postman]
+
+## Stats
+
+[![github stats][github-stats]][social-github]
+[![top languages][github-top-languages]][social-github]
+
 
 ## Follow me at
 
