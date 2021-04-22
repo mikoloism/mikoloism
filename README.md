@@ -70,8 +70,8 @@
 [badge-with-love]: http://ForTheBadge.com/images/badges/built-with-love.svg
 [badge-use-js]: http://ForTheBadge.com/images/badges/uses-js.svg
 [badge-smile]: http://ForTheBadge.com/images/badges/makes-people-smile.svg
-[badge-github-stars]: (https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000)
-[badge-github-followers]: (https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000)
+[badge-github-stars]: https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000
+[badge-github-followers]: https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000
 [badge-open-source]: https://badges.frapsoft.com/os/v1/open-source.svg?v=103
 [github-stars]: https://GitHub.com/miko-github/miko-github/stargazers/
 [github-followers]: https://github.com/miko-github?tab=followers
