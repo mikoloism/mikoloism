@@ -15,6 +15,7 @@
 ## Stats
 
 [![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)][1]
+
 [![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=blue-green)][1]
 
 [1]: https://github.com/miko-github/miko-github/blob/main/README.md
