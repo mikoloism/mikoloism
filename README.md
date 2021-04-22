@@ -1,4 +1,4 @@
-### Hi there 👋 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](1)
+### Hi there 👋 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)][1]
 
 <!--
 **miko-github/miko-github** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile
