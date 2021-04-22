@@ -5,4 +5,8 @@
 Here are some ideas to get you started:
 -->
 
-**JAVASCRIPT** is **EVERYWHERE**
+**JAVASCRIPT IS EVERYWHERE**
+
+
+
+[![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)](https://github.com/miko-github/github-readme-stats)
