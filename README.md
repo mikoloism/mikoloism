@@ -17,11 +17,10 @@
 <!-- ## Projects (repo) -->
 
 ## Skills
-
+![javascript][skills-js-dark]\
 ![html5][skills-html5]
 ![css3][skills-css3]
 ![scss][skills-sass]
-![javascript][skills-js-dark]
 ![pug-js][skills-pugjs]\
 ![node-js][skills-nodejs]
 ![express-js][skills-expressjs]
