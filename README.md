@@ -93,7 +93,7 @@
 [social-codepen]: https://codepen.io/miko-github
 [social-github]: https://github.com/miko-github
 [social-instagram]: https://instagram.com
-[social-gmail]: mikoloism.github@gmail.com
+[social-gmail]: mailto:mikoloism.github@gmail.com
 
 <!-- blogs -->
 
