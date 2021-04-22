@@ -9,4 +9,4 @@ Here are some ideas to get you started:
 
 
 
-[![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)](https://github.com/miko-github/github-readme-stats)
+[![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)](https://github.com/miko-github/miko-github/blob/main/README.md)
