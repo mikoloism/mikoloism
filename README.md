@@ -9,6 +9,7 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)][1]
 
 ## JAVASCRIPT IS EVERYWHERE 🎉
+
 [![built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)][1]
 [![uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)][1]
 [![makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)][1]
@@ -18,5 +19,13 @@
 [![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green)][1]
 
 [![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=blue-green)][1]
+
+<!-- ## Projects (repo) -->
+
+## Follow me at
+
+![codepen](https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white)
+
+<!-- links -->
 
 [1]: https://github.com/miko-github/miko-github/blob/main/README.md
