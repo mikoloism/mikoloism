@@ -7,7 +7,7 @@ Here are some ideas to get you started:
 
 ## **JAVASCRIPT IS EVERYWHERE**
 [![uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)][1]
-[![Profile views](https://gpvc.arturio.dev/miko-github)][1]
+[![GitHub followers](https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/miko-github?tab=followers)
 
 [![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=blue-green)][1]
 
