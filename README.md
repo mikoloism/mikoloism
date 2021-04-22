@@ -4,7 +4,7 @@
 **miko-github/miko-github** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile
 -->
 
-[![GitHub stars](https://img.shields.io/github/stars/miko-github/miko-github.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/miko-github/miko-github/stargazers/)
+[![GitHub stars](https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/miko-github/miko-github/stargazers/)
 [![GitHub followers](https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000)](https://github.com/miko-github?tab=followers)
 
 ## **JAVASCRIPT IS EVERYWHERE**
