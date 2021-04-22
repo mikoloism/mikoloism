@@ -23,10 +23,13 @@
 
 ## Follow me at
 
-![codepen][badge-codepen]
-![github][badge-github]
+[![codepen][badge-codepen]][social-codepen]
+[![github][badge-github]][social-github]
+[![instagram][badge-instagram]][social-instagram]
 
-<!-- links -->
+<!-- --------------------
+ links
+-->
 
 [readem]: https://github.com/miko-github/miko-github/blob/main/README.md
 [github-stats]: https://github-readme-stats.vercel.app/api?username=miko-github&theme=blue-green
@@ -41,3 +44,7 @@
 [github-followers]: https://github.com/miko-github?tab=followers
 [badge-codepen]: https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white
 [badge-github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[badge-instagram]: https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white
+[social-codepen]: https://codepen.io
+[social-github]: https://github.com/miko-github
+[social-instagram]: https://instagram.com
