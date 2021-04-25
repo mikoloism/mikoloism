@@ -8,12 +8,6 @@
 [![GitHub followers][badge-github-followers]][github-followers]
 [![Open Source Love][badge-open-source]][social-github]
 
-## JAVASCRIPT IS EVERYWHERE 🎉
-
-[![built-with-love][badge-with-love]][social-github]
-[![uses-js][badge-use-js]][social-github]
-[![makes-people-smile][badge-smile]][social-github]
-
 <!-- ## Projects (repo) -->
 
 ## Skills
