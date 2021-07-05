@@ -63,7 +63,7 @@ because i love ❤️ opensource, did you like it?
 		<td>
 			<a href="https://reactjs.org/" title="reactjs">
 				<img
-					src="https://reactjs.org/"
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_wordmark_logo_icon_146375.png"
 					alt="reactjs"
 					width="75px"
 					height="75px"
