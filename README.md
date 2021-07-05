@@ -29,7 +29,7 @@ because i love ❤️ opensource, did you like it?
 	</tr>
 	<tr align="center">
 		<td>
-			<a href="https://nodejs.org" title="nodejs" target="_blank">
+			<a href="https://nodejs.org" title="nodejs" target="blank">
 				<img
 					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/nodejs_original_logo_icon_146411.png"
 					alt="nodejs"
