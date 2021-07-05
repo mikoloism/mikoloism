@@ -5,7 +5,7 @@ table  : # align: center
   - title  : javascript
     link   : '#'
     img    : 'https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png'
-    more   : 
+    more   :
     colspan: 7
     width  : null
     height : null
