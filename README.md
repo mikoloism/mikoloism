@@ -1,7 +1,10 @@
 ### Hi there 👋
 
 <!--
-**miko-github/miko-github** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile
+Hi there 👋,
+if you like my `README.md`, don't worry, use them 🤗
+i mean you can copy/paste them 😉
+because i love ❤️ opensource, did you like it?
 -->
 
 [![GitHub stars][badge-github-stars]][github-stars]
@@ -11,6 +14,7 @@
 <!-- ## Projects (repo) -->
 
 ## Skills
+
 ![javascript][skills-js-dark]\
 ![html5][skills-html5]
 ![css3][skills-css3]
@@ -40,7 +44,6 @@
 
 [![github stats][github-stats]][social-github]
 [![top languages][github-top-languages]][social-github]
-
 
 ## Follow me at
 
