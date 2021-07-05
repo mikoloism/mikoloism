@@ -7,134 +7,392 @@ i mean you can copy/paste them 😉
 because i love ❤️ opensource, did you like it?
 -->
 
-[![GitHub stars][badge-github-stars]][github-stars]
-[![GitHub followers][badge-github-followers]][github-followers]
-[![Open Source Love][badge-open-source]][social-github]
+[![GitHub stars](https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000)](#)
+[![GitHub followers](https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000)](#)
+
+<!-- [![Open Source Love][badge-open-source]][social-github] -->
 
 <!-- ## Projects (repo) -->
 
 ## Skills
 
-![javascript][skills-js-dark]\
-![html5][skills-html5]
-![css3][skills-css3]
-![scss][skills-sass]
-![pug-js][skills-pugjs]\
-![node-js][skills-nodejs]
-![express-js][skills-expressjs]
-![electron-js][skills-electronjs]\
-![react-js][skills-reactjs]
-![vue-js][skills-vuejs]
-![ionic-js][skills-ionic]\
-![mysql][skills-mysql]
-![mongodb][skills-mongodb]
-![php][skills-php]
+<table id="skills">
+	<tr align="center">
+		<td colspan="5">
+			<a title="javascript" href="#">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png"
+					alt="javascript"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://nodejs.org" title="nodejs">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/nodejs_original_logo_icon_146411.png"
+					alt="nodejs"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.typescriptlang.org/" title="typescript">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_plain_logo_icon_146316.png"
+					alt="typescript"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://expressjs.com" title="express-js">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png"
+					alt="express-js"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://reactjs.org/" title="reactjs">
+				<img
+					src="https://reactjs.org/"
+					alt="reactjs"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://vuejs.org" title="vuejs">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/vuejs_original_wordmark_logo_icon_146305.png"
+					alt="vuejs"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://ionicframework.com/" title="ionic-framework">
+				<img
+					src="https://ionicframework.com/img/meta/logo.png"
+					alt="ionic-framework"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.electronjs.org/" title="electron-js">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2552/PNG/512/electron_browser_logo_icon_152997.png"
+					alt="electron-js"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://mongodb.com/" title="mongodb/mongoose">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png"
+					alt="mongodb/mongoose"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.mysql.com/" title="mysql">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mysql_original_wordmark_logo_icon_146417.png"
+					alt="mysql"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.postgresql.org/" title="postgresql">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_plain_wordmark_logo_icon_146390.png"
+					alt="postgresql"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://sequelize.org/" title="sequelize">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sequelize_icon_130173.png"
+					alt="sequelize"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="#" title="css3">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/css_plain_wordmark_logo_icon_146574.png"
+					alt="css3"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://sass-lang.com/" title="sass/scss">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sass_icon_130182.png"
+					alt="sass/scss"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://getbootstrap.com/" title="bootstrap">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/bootstrap_plain_wordmark_logo_icon_146620.png"
+					alt="bootstrap"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://styled-components.com/" title="styled-component">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_styled_icon_130142.png"
+					alt="styled-component"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://lesscss.org/" title="less">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_less_icon_130484.png"
+					alt="less"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="#" title="html5">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/128/html_plain_wordmark_logo_icon_146476.png"
+					alt="html5"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="#" title="markdown">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2249/PNG/512/language_markdown_outline_icon_139425.png"
+					alt="markdown"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://pugjs.org" title="pugjs">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_pug_icon_130225.png"
+					alt="pugjs"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://ejs.co/" title="ejs">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png"
+					alt="ejs"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://yaml.org/" title="yaml">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_yaml_icon_130421.png"
+					alt="yaml"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+</table>
 
-## Tools i use
+## Expriets
 
-![linux][badge-os-linux]
-![ubuntu][badge-os-ubuntu]
-![firefox][tools-firefox]
-![brave][tools-brave]
-![vscode][tools-vscode]
-![git][tools-git]
-![postman][tools-postman]
+<table id="expriets">
+	<tr align="center">
+		<td colspan="5">
+			<a href="https://opensource.org/" title="opensource">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2699/PNG/512/opensource_logo_icon_169884.png"
+					alt="opensource"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://git-scm.com/" title="git">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/git_plain_logo_icon_146507.png"
+					alt="git"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://github.com/" title="github">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/github_original_wordmark_logo_icon_146506.png"
+					alt="github"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.linux.org/" title="linux">
+				<img
+					src="https://cdn.icon-icons.com/icons2/195/PNG/256/OS_Linux_23399.png"
+					alt="linux"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://ubuntu.com/" title="ubuntu">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2415/PNG/512/ubuntu_plain_wordmark_logo_icon_146632.png"
+					alt="ubuntu"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://code.visualstudio.com/" title="vscode">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png"
+					alt="vscode"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a
+				href="https://www.mozilla.org/en-US/firefox/new/"
+				title="firefox">
+				<img
+					src="https://cdn.icon-icons.com/icons2/836/PNG/512/Mozilla_Firefox_icon-icons.com_66770.png"
+					alt="firefox"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://brave.com/" title="brave">
+				<img
+					src="https://cdn.icon-icons.com/icons2/2699/PNG/512/brave_logo_icon_167780.png"
+					alt="brave"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+</table>
 
-## Stats
+## Github Status
 
-[![github stats][github-stats]][social-github]
-[![top languages][github-top-languages]][social-github]
+[![github stats](https://github-readme-stats.vercel.app/api?username=miko-github&theme=white-black)](#)
+[![top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=white-black)](#)
 
-## Follow me at
+<table id="social-media">
+	<tr align="center">
+		<td colspan="4">
+			<h3>FOLLOW ME ✌️</h3>
+		</td>
+	</tr>
+	<tr align="center">
+		<td>
+			<a href="https://github.com/miko-github" title="github">
+				<img
+					src="https://cdn.icon-icons.com/icons2/1793/PNG/512/githubdrawlogo_114764.png"
+					alt="github"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://codepen.com/miko-github" title="codepen">
+				<img
+					src="https://cdn.icon-icons.com/icons2/1793/PNG/512/codependrawlogo_114723.png"
+					alt="codepen"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="mailto:mikoloism.github@gmail.com" title="gmail">
+				<img
+					src="https://cdn.icon-icons.com/icons2/1793/PNG/512/postenvelope_114740.png"
+					alt="gmail"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+		<td>
+			<a href="https://www.instagram.com/mikoloism" title="instagram">
+				<img
+					src="https://cdn.icon-icons.com/icons2/1793/PNG/512/instagramdrawlogo_114752.png"
+					alt="instagram"
+					width="75px"
+					height="75px"
+				/>
+			</a>
+		</td>
+	</tr>
+</table>
 
-[![Gmail][badge-gmail]][social-gmail]
-[![slack][badge-slack]](# 'anywhere programmers is')
-[![codepen][badge-codepen]][social-codepen]
-[![github][badge-github]][social-github]
-[![instagram][badge-instagram]][social-instagram]
-
-<!-- --------------------
- links
--->
-
-<!-- stats -->
-
-[github-stats]: https://github-readme-stats.vercel.app/api?username=miko-github&theme=white-black
-[github-top-languages]: https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&theme=white-black
-
-<!-- badges -->
-
-[badge-with-love]: http://ForTheBadge.com/images/badges/built-with-love.svg
-[badge-use-js]: http://ForTheBadge.com/images/badges/uses-js.svg
-[badge-smile]: http://ForTheBadge.com/images/badges/makes-people-smile.svg
-[badge-github-stars]: https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000
-[badge-github-followers]: https://img.shields.io/github/followers/miko-github.svg?style=social&label=Follow&maxAge=2592000
-[badge-open-source]: https://badges.frapsoft.com/os/v1/open-source.svg?v=103
-[github-stars]: https://GitHub.com/miko-github/miko-github/stargazers/
-[github-followers]: https://github.com/miko-github?tab=followers
-
-<!-- -----------------------
- sociality
- -->
-
-<!-- social-badge -->
-
-[badge-codepen]: https://img.shields.io/badge/Codepen-000000?style=for-the-badge&logo=codepen&logoColor=white
-[badge-github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
-[badge-instagram]: https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white
-[badge-slack]: https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white
-[badge-gmail]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
-
-<!-- social-links -->
-
-[social-codepen]: https://codepen.io/miko-github
-[social-github]: https://github.com/miko-github
-[social-instagram]: https://instagram.com
-[social-gmail]: mailto:mikoloism.github@gmail.com
-
-<!-- blogs -->
-
-[badge-dev]: https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white
-[badge-blogger]: https://img.shields.io/badge/Blogger-FF5722?style=for-the-badge&logo=blogger&logoColor=white
-[badge-rss]: https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white
-
-<!-- os -->
-
-[badge-os-linux]: https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black
-[badge-os-ubuntu]: https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white
-
-<!-- -----------------------
-Skills
--->
-
-[skills-html5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-[skills-css3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
-[skills-js]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[skills-js-dark]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
-[skills-nodejs]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-[skills-expressjs]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white
-[skills-sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
-[skills-php]: https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white
-[skills-md]: https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white
-[skills-bash]: https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white
-[skills-reactjs]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[skills-vuejs]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D
-[skills-bootstrap]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[skills-mysql]: https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white
-[skills-mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
-[skills-electronjs]: https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white
-[skills-pugjs]: https://img.shields.io/badge/Pug.js-A86454?style=for-the-badge&logo=pug&logoColor=white
-[skills-ionic]: https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white
-[skills-ms-office]: https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white
-
-<!-- i never use this badge -->
-
-[skills-jquery]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-
-<!-- tools -->
-
-[tools-vscode]: https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white
-[tools-git]: https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white
-[tools-brave]: https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=brave&logoColor=white
-[tools-firefox]: https://img.shields.io/badge/FireFox-FF7139?style=for-the-badge&logo=firefox&logoColor=white
-[tools-postman]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white
+<!-- TODO : figma, slack, bash, php, python, webpack, dev.to, gnu, new-sass-logo -->
