@@ -1,0 +1,209 @@
+# Skills Objects List
+# default [width: 75px, height: 75px]
+---
+table  : # align: center
+  - title  : javascript
+    link   : '#'
+    img    : 'https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png'
+    more   : 
+    colspan: 7
+    width  : null
+    height : null
+
+  - title: nodejs
+    link : 'https://nodejs.org'
+    img  :
+        'https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/nodejs_original_logo_icon_146411.png'
+
+  - title: typescript
+    link : 'https://www.typescriptlang.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_plain_logo_icon_146316.png'
+
+  - title: express-js
+    link : 'https://expressjs.com'
+    img  : 'https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png'
+
+  - title: reactjs
+    link : 'https://reactjs.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_wordmark_logo_icon_146375.png'
+
+  #! [to-append]
+  - title: redux
+    link : 'https://redux.js.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png'
+
+  #! [to-find]
+  - title: nextjs
+    link : ''
+    img  : ''
+
+  - title: vuejs
+    link : 'https://vuejs.org'
+    img  : 'https://cdn.icon-icons.com/icons2/2415/PNG/512/vuejs_original_wordmark_logo_icon_146305.png'
+
+  - title: ionic-framework
+    link : 'https://ionicframework.com/'
+    img  : 'https://ionicframework.com/img/meta/logo.png'
+
+  - title: electron-js
+    link : 'https://www.electronjs.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2552/PNG/512/electron_browser_logo_icon_152997.png'
+
+  # [DATABASE]
+  - title: mongodb/mongoose
+    link : 'https://mongodb.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_plain_wordmark_logo_icon_146423.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_plain_logo_icon_146422.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png'
+
+  - title: mysql
+    link : 'https://www.mysql.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/mysql_original_wordmark_logo_icon_146417.png'
+        # https:   //cdn.icon-icons.com/icons2/2415/PNG/512/mysql_plain_wordmark_logo_icon_146415.png
+        # https:   //cdn.cdnlogo.com/logos/m/47/mysql.svg
+
+  - title: postgresql
+    link : 'https://www.postgresql.org/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_plain_wordmark_logo_icon_146390.png'
+        # https:   //cdn.icon-icons.com/icons2/2699/PNG/512/postgresql_vertical_logo_icon_168900.png
+
+  - title: sequelize
+    link : 'https://sequelize.org/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sequelize_icon_130173.png'
+        # https:   //cdn.icon-icons.com/icons2/2415/PNG/512/sequelize_plain_logo_icon_146346.png
+
+  # [STYLES]
+  - title: css3
+    link : \#
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/css_original_wordmark_logo_icon_146576.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/css_plain_wordmark_logo_icon_146574.png'
+
+  - title: sass/scss
+    link : 'https://sass-lang.com/'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sass_icon_130182.png'
+
+  - title: bootstrap
+    link : 'https://getbootstrap.com/'
+    img  : 'https://cdn.icon-icons.com/icons2/2415/PNG/512/bootstrap_plain_wordmark_logo_icon_146620.png'
+
+  - title: styled-component
+    link : 'https://styled-components.com/'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_styled_icon_130142.png'
+
+  - title: less
+    link : 'https://lesscss.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_less_icon_130484.png'
+
+  # [MARKS]
+  - title: html5
+    link : \#
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/html_original_wordmark_logo_icon_146478.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/128/html_plain_wordmark_logo_icon_146476.png'
+
+  - title: markdown
+    link : '#'
+    img  : 'https://cdn.icon-icons.com/icons2/2249/PNG/512/language_markdown_outline_icon_139425.png'
+
+  - title: pugjs
+    link : 'https://pugjs.org'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_pug_icon_130225.png'
+
+  - title: ejs
+    link : 'https://ejs.co/'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_ejs_icon_130626.png'
+
+  - title: yaml
+    link : 'https://yaml.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_yaml_icon_130421.png'
+
+  # [OTHER]
+  - title: jquery
+    link : 'https://jquery.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/jquery_original_wordmark_logo_icon_146447.png'
+        # https:   //cdn.icon-icons.com/icons2/2415/PNG/512/jquery_plain_wordmark_logo_icon_146445.png
+
+  - title: git
+    link : 'https://git-scm.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/git_plain_logo_icon_146507.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/git_original_wordmark_logo_icon_146510.png'
+        # 'https://cdn.icon-icons.com/icons2/2415/PNG/512/git_plain_wordmark_logo_icon_146508.png'
+
+  - title: github
+    link : 'https://github.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/github_original_wordmark_logo_icon_146506.png'
+        # https:   //cdn.icon-icons.com/icons2/2415/PNG/512/github_original_wordmark_logo_icon_146506.png'https://cdn.icon-icons.com/icons2/936/PNG/512/github-logo_icon-icons.com_73546.png'
+        # 'https://cdn.icon-icons.com/icons2/1238/PNG/512/githublogo_83754.png'
+
+  - title: opensource
+    link : 'https://opensource.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2699/PNG/512/opensource_logo_icon_169884.png'
+
+  - title: linux
+    link : 'https://www.linux.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/195/PNG/256/OS_Linux_23399.png'
+
+  - title: ubuntu
+    link : 'https://ubuntu.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2415/PNG/512/ubuntu_plain_wordmark_logo_icon_146632.png'
+        # 'https://cdn.icon-icons.com/icons2/56/PNG/512/Metroubuntualt_metr_11315.png'
+
+  - title: firefox
+    link : 'https://www.mozilla.org/en-US/firefox/new/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/836/PNG/512/Mozilla_Firefox_icon-icons.com_66770.png'
+        # 'https://cdn.icon-icons.com/icons2/2699/PNG/512/firefox_logo_icon_170152.png'
+        # 'https://cdn.icon-icons.com/icons2/2699/PNG/512/firefox_logo_icon_169175.png'
+
+  - title: brave
+    link : 'https://brave.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2699/PNG/512/brave_logo_icon_167780.png'
+        # 'https://cdn.icon-icons.com/icons2/2699/PNG/512/brave_logo_icon_169457.png'
+
+  - title: vscode
+    link : 'https://code.visualstudio.com/'
+    img  :
+        'https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png'
+        # 'https://cdn.icon-icons.com/icons2/2699/PNG/512/visualstudio_code_logo_icon_170247.png'
+        # 'https://cdn.icon-icons.com/icons2/1381/PNG/512/visualstudiocode_93981.png'
+        # 'https://cdn.icon-icons.com/icons2/2699/PNG/512/visualstudio_code_logo_icon_170248.png'
+
+  # [OTHER-LANGS]
+  - title: php
+    link : 'https://www.php.net/'
+    img  : 'https://cdn.icon-icons.com/icons2/2530/PNG/512/php_button_icon_151926.png'
+
+  - title: Python
+    link : 'https://www.python.org/'
+    img  : 'https://cdn.icon-icons.com/icons2/2530/PNG/512/python_button_icon_151925.png'
+
+  # [SOCIAL-MEDIA]
+  - title: instagram
+    link : 'https://www.instagram.com/mikoloism'
+    img  : 'https://cdn.icon-icons.com/icons2/1793/PNG/512/instagramdrawlogo_114752.png'
+
+  - title: codepen
+    link : 'https://codepen.com/miko-github'
+    img  : 'https://cdn.icon-icons.com/icons2/1793/PNG/512/codependrawlogo_114723.png'
+
+  - title: gmail
+    link : 'mailto:mikoloism.github@gmail.com'
+    img  :
+        'https://cdn.icon-icons.com/icons2/1793/PNG/512/postenvelope_114740.png'
+        # 'https://cdn.icon-icons.com/icons2/1793/PNG/512/commercialat_114727.png'
+
+  - title: github
+    link : 'https://github.com/miko-github'
+    img  : 'https://cdn.icon-icons.com/icons2/1793/PNG/512/githubdrawlogo_114764.png'
