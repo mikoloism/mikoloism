@@ -23,8 +23,6 @@ because i love ❤️ opensource, did you like it?
 				<img
 					src="https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png"
 					alt="javascript"
-          width="75px"
-					height="75px"
 				/>
 			</a>
 		</td>
