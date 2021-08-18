@@ -6,7 +6,6 @@ if you like my `README.md`, don't worry, use them 🤗
 i mean you can copy/paste them 😉
 because i love ❤️ opensource, did you like it?
 -->
-[![Open Source Love][badge-open-source]][social-github]
 
 this branch have useful and helpful utilities to create codepens as easy as CDN way in [codepen.io](https://codepen.io/miko-github 'codepen.io')
 
