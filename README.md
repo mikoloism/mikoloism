@@ -12,5 +12,5 @@ this branch have useful and helpful utilities to create codepens as easy as CDN 
 > CDN Structure\
 > http(s)://cdn.jsdelivr\.net/gh/miko-github/miko-github[@v0.0.1]/[path]/codepen.[js|scss]
 
-- [Javascript](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1-alpha/codepen.js)
-- [SCSS](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1-alpha/codepen.scss)
+- [Javascript](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1/codepen.js)
+- [SCSS](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1/codepen.scss)
