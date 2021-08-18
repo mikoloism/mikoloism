@@ -15,4 +15,9 @@ because i love ❤️ opensource, did you like it?
 <!-- ## Projects (repo) -->
 a list of useful file to use as CDN in [codepen.io](https://codepen.io/miko-github 'codepen.io')
 
-<!-- TODO : figma, slack, bash, php, python, webpack, dev.to, gnu, new-sass-logo -->
+> NOTE
+>
+> https://cdn.jsdelivr.net/gh/miko-github/miko-github[@v0.0.1-alpha]/[path]/[file].[format]
+
+- [Javascript](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1-alpha/codepen.js)
+- [SCSS](https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.0.1-alpha/codepen.scss)
