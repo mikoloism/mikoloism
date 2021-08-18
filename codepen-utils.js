@@ -1,0 +1,72 @@
+// this file used on codepen as utilities
+// powered by MIKOLOISM
+
+
+/**
+ * typeOf - Return Actual/Exact Type Of `$value`
+ * @param {any} value - which value to return type
+ * @return {string} type - exact type of `value`
+ */
+function typeOf(value) {
+  let regex = /\[object (.*?)\]/i;
+  let exactPrototype = Object.prototype.toString.call(value);
+  let exactType = regex.exec(exactPrototype)[1];
+  return exactType.toLowerCase();
+};
+
+/**
+ * isType - check `value` be in `type`
+ * @param {any} value - which value to equal type
+ * @param {string} type - what type of equal
+ * @return {boolean} isType - Resualt of Equalition [true|false]
+ */
+function isType(value, type) {
+  // `type` should be passed and be {string|array[string]}
+  if(!type && typeOf(type) !== 'string' && typeOf(type) !== 'array')
+    return new Error('[isType] : please, `type` argumant should be string or Array of types');
+  // if `type` is array, check some of type be match with value
+  // ALT : type.some((t) => typeOf(value) === t);
+  if(typeOf(type) === 'array') return type.indexOf(typeOf(value)) != -1;
+  // only string type available, check value with type
+  return typeOf(value) === type;
+}
+
+/**
+ * append - Append Children to Parent Elements
+ * @param {HTMLElement} parent - parent HTMLElement Object
+ * @param {Children=null} children - HTML String | HTML Object | Array of Child Object
+ * @return {HTMLElement} element - Appended Elements to Parents
+ */
+function append(parent, children) {
+  // if children is string
+  if (isType(children, 'string'))
+    // convert to Text Element
+    return parent.appendChild(document.createTextNode(children));
+  // if children is array, return again each element of array to this function
+  if (isType(children, 'array')) return children.map((child) => append(parent, child));
+  // if children is HTMLElement|Element, appending
+  if (isType(children, ['element', 'htmlelement'])) return parent.appendChild(children);
+}
+
+/**
+ * createElement - Create Element as Annar Component
+ * @param {string='div'} TagName
+ * @param {?object=null} Props - Attributes/Properties
+ * @param {?Children=null} children - HTML String | HTML Object | Array of Child Object
+ * @return {HTMLElement} element - Created Element
+ */
+function createElement(tag, props, children) {
+  let $this = document.createElement(tag);
+
+  if (props) {
+    Object.keys(props).forEach((attr) => {
+      $this.setAttribute(attr, props[attr]);
+    });
+  }
+
+  if (children) {
+    append($this, children);
+  }
+
+  return $this;
+}
