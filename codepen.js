@@ -1,6 +1,8 @@
 // this file used on codepen as utilities
 // powered by MIKOLOISM
 
+console.log('[codepen.js] - running...');
+
 
 /**
  * typeOf - Return Actual/Exact Type Of `$value`
