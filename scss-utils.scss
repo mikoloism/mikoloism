@@ -1,0 +1,119 @@
+/* yek-sass (https://github.com/yek-org/yek-sass) */
+@mixin --clear-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin --clear-btn {
+  border: 0;
+  outline: 0;
+  stroke: 0;
+  box-shadow: 0;
+}
+@mixin yek-width($w: null, $max: null, $min: null) {
+  @if $w == null and $max == null and $min == null {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  @if $w not null {
+    width: $w;
+  }
+  @if $max not null {
+    max-width: $max;
+  }
+  @if $min not null {
+    min-width: $min;
+  }
+}
+@mixin yek-height($h: null, $max: null, $min: null) {
+  @if $h == null and $max == null and $min == null {
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+  }
+  @if $h not null {
+    height: $h;
+  }
+  @if $max not null {
+    max-height: $max;
+  }
+  @if $min not null {
+    min-height: $min;
+  }
+}
+@mixin yek-align($ver: null, $hor: null, $content: null) {
+  @if $hor == null and $ver == null {
+    align-items: center;
+    justify-content: center;
+  }
+  @if $hor not null {
+    align-items: $hor; // hor
+  }
+  @if $ver not null {
+    justify-content: $ver; // ver
+  }
+  @if $content not null {
+    align-content: $content;
+  }
+}
+@mixin yek-aligns($align: center) {
+  @include yek-align($align, $align, $align);
+}
+@mixin yek-flex($dir: row, $wrap: wrap) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+}
+@mixin yek-size($w: null, $h: null) {
+  @if $w == null and $h == null {
+    width: 100%;
+    height: 100%;
+  }
+  @if $w not null {
+    width: $w;
+  }
+  @if $h not null {
+    height: $h;
+  }
+}
+
+@mixin case($case: null) {
+  $_case: none;
+  @if $case == lower or $case == lowercase {
+    $_case: lowercase;
+  } @else if $case == upper or $case == uppercase {
+    $_case: uppercase;
+  } @else if $case == title or $case == capitalize {
+    $_case: capitalize;
+  } @else if $case == full or $case == full-width {
+    $_case: full-width;
+  } @else if $case == null or $case == none {
+    $_case: none;
+  } @else {
+    $_case: none;
+  }
+  text-transform: $_case;
+}
+
+// google fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: 0.2s ease all;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+body {
+  @include yek-flex(column);
+  @include yek-width(100vw);
+  @include yek-height($min: 100vh);
+}
