@@ -32,6 +32,20 @@ function isType(value, type) {
 }
 
 /**
+ * isElement - check if `value` is Element|HTMLElement, return true, else, false
+ * @param {any} value - which value to check if element
+ * @param {?string} elementType - which element is, alike 'heading'|'div' etc.
+ * @return {boolean} isElement - Resualt of Equalition [true|false]
+ */
+function isElement(value, type) {
+  let regex = /^(HTML){0,1}.*?(Element){1}$/ig;
+  let baseType = typeOf(value);
+  let exactType = regex.exec(baseType);
+  if(!type) return exactType.indexOf('element') != -1;
+  return (exactType.indexOf('element') != -1) && (exactType[2] === type.toLowerCase());
+}
+
+/**
  * append - Append Children to Parent Elements
  * @param {HTMLElement} parent - parent HTMLElement Object
  * @param {Children=null} children - HTML String | HTML Object | Array of Child Object
@@ -39,13 +53,15 @@ function isType(value, type) {
  */
 function append(parent, children) {
   // if children is string
+  // is textNode, then, appending to parent
+  if (isType(children, 'text')) return parent.appendChild(children);
   if (isType(children, 'string'))
-    // convert to Text Element
+    // convert to textNode, and append to parent
     return parent.appendChild(document.createTextNode(children));
   // if children is array, return again each element of array to this function
   if (isType(children, 'array')) return children.map((child) => append(parent, child));
   // if children is HTMLElement|Element, appending
-  if (isType(children, ['element', 'htmlelement'])) return parent.appendChild(children);
+  if (isElement(children)) return parent.appendChild(children);
 }
 
 /**
@@ -69,4 +85,15 @@ function createElement(tag, props, children) {
   }
 
   return $this;
+}
+
+function createFragment(){
+  return document.createDocumentFragment();
+}
+
+function query(q){
+  return document.querySelector(q);
+}
+function queryAll(q){
+  return document.querySelectorAll(q);
 }
