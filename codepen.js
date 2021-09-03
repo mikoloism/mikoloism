@@ -99,3 +99,24 @@ function query(q){
 function queryAll(q){
   return document.querySelectorAll(q);
 }
+
+/**
+ * listener - Event Listener (alise `el.addEventListener`)
+ * @param {string|HTMLElement} elemenr - Selector or HTML Element Objext
+ * @param {string} event - Event
+ * @param {Function} handler - A Function as Callback function when event trigger
+ */
+function listener(element, event, cb = () => {}, ...options) {
+  // when element is html object
+  if(isElement(element)) {
+     return element.addEventListener(event, cb, ...options);
+  }
+  
+  // when element is string selector
+  if(isType(element, 'string')) {
+    let elements = [...queryAll(element)];
+    return elements.map(($this) => {
+      return $this.addEventListener(event, cb, ...options);
+    });
+  }
+}
