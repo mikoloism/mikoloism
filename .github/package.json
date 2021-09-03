@@ -1,0 +1,28 @@
+{
+  "name": "{{PAGE_NAME}}",
+  "version": "1.0.0",
+  "homepage": "https://miko-github.github.io/miko-github/{{PAGE_NAME}}",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miko-github/miko-github"
+  },
+  "author": {
+    "name": "mikoloism",
+    "url": "https://miko-github.github.io/miko-github",
+    "email": "mikoloism.github@gmail.com"
+  },
+  "scripts": {
+    "comment::build:sass": "--load-path=node_modules/",
+    "comment::inline": "node ./node_modules/inline-scripts/src/cli/inlineStylesheets.js index.html .",
+    "build:sass": "sass --source-map-urls=relative ./style.scss ./style.css",
+    "inline": "node ./node_modules/inline-scripts/src/cli/inlineStylesheets.js index.html {{PAGE_NAME}}/index.html",
+    "commit": "git commit -m '[ :tada: ] : updated with {{PAGE_NAME}}' {{PAGE_NAME}}/index.html",
+    "push": "git push origin gh_page",
+    "move": "mv {{PAGE_NAME}}/index.html gh_page/{{PAGE_NAME}}/index.html"
+  },
+  "devDependencies": {
+    "inline-scripts": "1.7.4",
+    "sass": "1.39.0"
+  }
+}
