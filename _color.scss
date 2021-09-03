@@ -9,7 +9,7 @@
 }
 
 // +++ CRYSTAL +++ //
-$crystal: (
+$color--crystal: (
   // light
   #ffffff,
   // silver
@@ -21,12 +21,12 @@ $crystal: (
   // orange
   #d35e35
 );
-@function crystal($index) {
-  @return get-color($crystal, $index);
+@function color--crystal($index) {
+  @return get-color($color--crystal, $index);
 }
 
 // +++ BRIGHT +++ //
-$bright: (
+$color--bright: (
   // coral-red
   #f63f3a,
   // deep-saffron
@@ -38,12 +38,12 @@ $bright: (
   // light-sea-green
   #17aaaa
 );
-@function bright($index) {
-  @return get-color($bright, $index);
+@function color--bright($index) {
+  @return get-color($color--bright, $index);
 }
 
 // +++ HUNNY_BUNNY +++ //
-$hunny-bunny: (
+$color--hunny-bunny: (
   // vanilla-ice
   #f187a4,
   // topaz
@@ -53,12 +53,12 @@ $hunny-bunny: (
   // baby-blue-eyes
   #9ccaec
 );
-@function hunny-bunny($index) {
-  @return get-color($hunny-bunny, $index);
+@function color--hunny-bunny($index) {
+  @return get-color($color--hunny-bunny, $index);
 }
 
 // +++ CRAZY_AFTERNOON +++ //
-$crazy-afternoon: (
+$color--crazy-afternoon: (
   // burnt-sienna
   #f26d53,
   // maximum-yellow-red
@@ -68,8 +68,8 @@ $crazy-afternoon: (
   // dark-slate-gray
   #27455b
 );
-@function crazy-afternoon($index) {
-  @return get-color($crazy-afternoon, $index);
+@function color--crazy-afternoon($index) {
+  @return get-color($color--crazy-afternoon, $index);
 }
 
 // +++ FONT_MAGIC +++ //
