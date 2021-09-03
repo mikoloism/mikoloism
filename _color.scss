@@ -1,0 +1,186 @@
+@use 'sass:list';
+
+@function get-color($color-palette, $index: 1) {
+  $length: list.length($color-palette);
+  @if $index <= $length and $index >= 1 {
+    @return list.nth($color-palette, $index);
+  }
+  @debug 'Too many parameters. `$index` should be between 1 and #{$length}.';
+}
+
+// +++ CRYSTAL +++ //
+$crystal: (
+  // light
+  #ffffff,
+  // silver
+  #cacbd5,
+  // gray
+  #666f88,
+  // dark
+  #3d4251,
+  // orange
+  #d35e35
+);
+@function crystal($index) {
+  @return get-color($crystal, $index);
+}
+
+// +++ BRIGHT +++ //
+$bright: (
+  // coral-red
+  #f63f3a,
+  // deep-saffron
+  #ffa42e,
+  // bright-gray
+  #eeeeee,
+  // jet
+  #363636,
+  // light-sea-green
+  #17aaaa
+);
+@function bright($index) {
+  @return get-color($bright, $index);
+}
+
+// +++ HUNNY_BUNNY +++ //
+$hunny-bunny: (
+  // vanilla-ice
+  #f187a4,
+  // topaz
+  #fece76,
+  // lavender
+  #e5eff9,
+  // baby-blue-eyes
+  #9ccaec
+);
+@function hunny-bunny($index) {
+  @return get-color($hunny-bunny, $index);
+}
+
+// +++ CRAZY_AFTERNOON +++ //
+$crazy-afternoon: (
+  // burnt-sienna
+  #f26d53,
+  // maximum-yellow-red
+  #edb951,
+  // teal-green
+  #0a8a7d,
+  // dark-slate-gray
+  #27455b
+);
+@function crazy-afternoon($index) {
+  @return get-color($crazy-afternoon, $index);
+}
+
+// +++ FONT_MAGIC +++ //
+$color--font-magic: (
+  // dark-charcoal
+  #333333,
+  // chinese-silver
+  #cdcdcd,
+  // cultured
+  #f6f6f6,
+  // cool-black
+  #002962
+);
+@function color--font-magic($index) {
+  @return get-color($color--font-magic, $index);
+}
+
+// +++ CORRECT_ALL_ALONG +++ //
+$color--correct-all-along: (
+  // pale-silver
+  #ccc2c0,
+  // champagne
+  #f7e8ca,
+  // baby-pink
+  #f7c8c8,
+  // pastel-blue
+  #adbecf
+);
+@function color--correct-all-along($index) {
+  @return get-color($color--correct-all-along, $index);
+}
+
+// +++ REDESIGNED +++ //
+$color--redesigned: (
+  // bright-gray
+  #eaeff9,
+  // pale-cerulean
+  #a1c4d8,
+  // blue-gray
+  #5c9dc0,
+  // x11-gray
+  #bebebe,
+  // taupe-gray
+  #878787,
+  // bright-gray
+  #ececec
+);
+@function color--redesigned($index) {
+  @return get-color($color--redesigned, $index);
+}
+
+// +++ GOOGLE_UI +++ //
+$color--google-ui: (
+  // bleu-de-france
+  #3484f0,
+  // lavender-blue
+  #c4dbfa,
+  // cultured
+  #f7f7f7,
+  // sonic-silver
+  #757575
+);
+@function color--google-ui($index) {
+  @return get-color($color--google-ui, $index);
+}
+
+// +++ MASCO +++ //
+$color--masco: (
+  // water
+  #dbeff9,
+  // blue-cola
+  #0098e6,
+  // vivid-yellow
+  #ffe50f,
+  // kelly-green
+  #60b41c,
+  // usaf-air-force-blue
+  #003987,
+  // halloween-orange
+  #f26522
+);
+@function color--masco($index) {
+  @return get-color($color--masco, $index);
+}
+
+// +++ RECEIPT +++ //
+$color--receipt: (
+  // ash-gray
+  #b2beb5,
+  // web-azure
+  #f0ffff,
+  // air-superiority-blue
+  #72a0c1,
+  // dark-midnight-blue
+  #003366
+);
+@function color--receipt($index) {
+  @return get-color($color--receipt, $index);
+}
+
+// +++ EASY_WEB_TONES +++ //
+$color--easy-web-tones: (
+  // davy-s-grey
+  #535254,
+  // seashell
+  #f9f5ed,
+  // buff
+  #f2da8b,
+  // light-carmine-pink
+  #ee5a66
+);
+@function color--easy-web-tones($index) {
+  @return get-color($color--easy-web-tones, $index);
+}
