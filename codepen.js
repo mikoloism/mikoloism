@@ -3,7 +3,6 @@
 
 console.log('[codepen.js] - running...');
 
-
 /**
  * typeOf - Return Actual/Exact Type Of `$value`
  * @param {any} value - which value to return type
@@ -14,7 +13,7 @@ function typeOf(value) {
   let exactPrototype = Object.prototype.toString.call(value);
   let exactType = regex.exec(exactPrototype)[1];
   return exactType.toLowerCase();
-};
+}
 
 /**
  * isType - check `value` be in `type`
@@ -24,11 +23,13 @@ function typeOf(value) {
  */
 function isType(value, type) {
   // `type` should be passed and be {string|array[string]}
-  if(!type && typeOf(type) !== 'string' && typeOf(type) !== 'array')
-    return new Error('[isType] : please, `type` argumant should be string or Array of types');
+  if (!type && typeOf(type) !== 'string' && typeOf(type) !== 'array')
+    return new Error(
+      '[isType] : please, `type` argumant should be string or Array of types'
+    );
   // if `type` is array, check some of type be match with value
   // ALT : type.some((t) => typeOf(value) === t);
-  if(typeOf(type) === 'array') return type.indexOf(typeOf(value)) != -1;
+  if (typeOf(type) === 'array') return type.indexOf(typeOf(value)) != -1;
   // only string type available, check value with type
   return typeOf(value) === type;
 }
@@ -40,11 +41,13 @@ function isType(value, type) {
  * @return {boolean} isElement - Resualt of Equalition [true|false]
  */
 function isElement(value, type) {
-  let regex = /^(HTML){0,1}.*?(Element){1}$/ig;
+  let regex = /^(HTML){0,1}.*?(Element){1}$/gi;
   let baseType = typeOf(value);
   let exactType = regex.exec(baseType);
-  if(!type) return exactType.indexOf('element') != -1;
-  return (exactType.indexOf('element') != -1) && (exactType[2] === type.toLowerCase());
+  if (!type) return exactType.indexOf('element') != -1;
+  return (
+    exactType.indexOf('element') != -1 && exactType[2] === type.toLowerCase()
+  );
 }
 
 /**
@@ -61,7 +64,8 @@ function append(parent, children) {
     // convert to textNode, and append to parent
     return parent.appendChild(document.createTextNode(children));
   // if children is array, return again each element of array to this function
-  if (isType(children, 'array')) return children.map((child) => append(parent, child));
+  if (isType(children, 'array'))
+    return children.map((child) => append(parent, child));
   // if children is HTMLElement|Element, appending
   if (isElement(children)) return parent.appendChild(children);
 }
@@ -89,14 +93,14 @@ function createElement(tag, props, children) {
   return $this;
 }
 
-function createFragment(){
+function createFragment() {
   return document.createDocumentFragment();
 }
 
-function query(q){
+function query(q) {
   return document.querySelector(q);
 }
-function queryAll(q){
+function queryAll(q) {
   return document.querySelectorAll(q);
 }
 
@@ -108,12 +112,12 @@ function queryAll(q){
  */
 function listener(element, event, cb = () => {}, ...options) {
   // when element is html object
-  if(isElement(element)) {
-     return element.addEventListener(event, cb, ...options);
+  if (isElement(element)) {
+    return element.addEventListener(event, cb, ...options);
   }
-  
+
   // when element is string selector
-  if(isType(element, 'string')) {
+  if (isType(element, 'string')) {
     let elements = [...queryAll(element)];
     return elements.map(($this) => {
       return $this.addEventListener(event, cb, ...options);

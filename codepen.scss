@@ -1,4 +1,4 @@
-@debug "[codepen.scss] - running...";
+@debug '[codepen.scss] - running...';
 
 /* yek-sass (https://github.com/yek-org/yek-sass) */
 @mixin --clear-list {
@@ -111,51 +111,57 @@
 
 // under developing
 @mixin transform($transform: null) {
-	@if $transform not null {
-		transform: $transform;
-	}
+  @if $transform not null {
+    transform: $transform;
+  }
 }
 @mixin translate($x: null, $y: null, $z: null) {
-	@if $z not null {
-		@include transform(translateZ($z));
-	}
-	@if $y not null {
-		@include transform(translateY($y));
-	}
-	@if $x not null {
-		@include transform(translateX($x));
-	}
+  @if $z not null {
+    @include transform(translateZ($z));
+  }
+  @if $y not null {
+    @include transform(translateY($y));
+  }
+  @if $x not null {
+    @include transform(translateX($x));
+  }
 }
 
 @mixin scale($x: null, $y: null, $z: null) {
-	@if $z not null {
-		@include transform(scaleZ($z));
-	}
-	@if $y not null {
-		@include transform(scaleY($y));
-	}
-	@if $x not null {
-		@include transform(scaleX($x));
-	}
+  @if $z not null {
+    @include transform(scaleZ($z));
+  }
+  @if $y not null {
+    @include transform(scaleY($y));
+  }
+  @if $x not null {
+    @include transform(scaleX($x));
+  }
 }
 
 @mixin rotate($z: null, $x: null, $y: null) {
-	@if $z not null {
-		@include transform(rotateZ($z));
-	}
-	@if $y not null {
-		@include transform(rotateY($y));
-	}
-	@if $x not null {
-		@include transform(rotateX($x));
-	}
+  @if $z not null {
+    @include transform(rotateZ($z));
+  }
+  @if $y not null {
+    @include transform(rotateY($y));
+  }
+  @if $x not null {
+    @include transform(rotateX($x));
+  }
 }
 
 // under developing
-@mixin position($type: null, $top: null, $left: null, $bottom: null, $right: null) {
-	@if $type not null {
-		position: $type;
-	}
+@mixin position(
+  $type: null,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
+  @if $type not null {
+    position: $type;
+  }
   @if $top not null {
     top: $top;
   }
@@ -170,37 +176,19 @@
   }
 }
 @mixin absolute($top: null, $left: null, $bottom: null, $right: null) {
-	@include position(
-		absolute,
-		$top,
-    $left,
-    $bottom,
-    $right
-	);
+  @include position(absolute, $top, $left, $bottom, $right);
 }
 @mixin fixed($top: null, $left: null, $bottom: null, $right: null) {
-	@include position(
-		fixed,
-		$top,
-    $left,
-    $bottom,
-    $right
-	);
+  @include position(fixed, $top, $left, $bottom, $right);
 }
 @mixin relative($top: null, $left: null, $bottom: null, $right: null) {
-	@include position(
-		relative,
-		$top,
-    $left,
-    $bottom,
-    $right
-  );
+  @include position(relative, $top, $left, $bottom, $right);
 }
 
 // TODO : color maps
 
 // google fonts
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 *,
 *::before,
@@ -209,7 +197,8 @@
   transition: 0.2s ease all;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', 'sans-serif';
