@@ -75,7 +75,7 @@
           background-color: #5c9dc0;
         }`;
 
-        const $template = /*html*/ `
+      const $template = /*html*/ `
         <style type="text/css">${$style}</style>
         <div class="loading-box">
           <h3 style="align-self: flex-start; margin: 9px 4px; padding: 0;">please wait...</h3>
@@ -91,61 +91,61 @@
           </div>
         </div>`;
 
-        class YLoading extends HTMLElement {
-          constructor() {
-            super();
-            this.$template = document.createElement("template");
-            this.$template.innerHTML = $template;
-            this.attachShadow({ mode: "open" });
-          }
-
-          connectedCallback() {
-            this.shadowRoot.appendChild(this.$template.content.cloneNode(true));
-            this.$this = this.shadowRoot.querySelector(".loading");
-            this.$children = this.shadowRoot.querySelectorAll(".loading__block");
-            this.$mode = this.dataset.mode;
-            this.$speed = parseInt(this.dataset.speed || `150`);
-            this.render();
-          }
-
-          mode_reverse() {
-            let index = 0;
-            let isReverse = false;
-            window.setInterval(() => {
-              this.$children[index].classList.toggle("loading__block--active");
-              if (isReverse) {
-                if (index - 1 <= 0) isReverse = false;
-                index--;
-              } else {
-                index++;
-                if (index + 1 >= this.$children.length) isReverse = true;
-              }
-            }, this.$speed);
-          }
-
-          mode_alternate() {
-            let index = 0;
-            window.setInterval(() => {
-              this.$children[index].classList.toggle("loading__block--active");
-              index++;
-              if (index + 1 >= this.$children.length) index = 0;
-            }, this.$speed);
-          }
-
-          render() {
-            switch (this.$mode) {
-              case "reverse":
-                this.mode_reverse();
-                break;
-              case "alternate":
-              default:
-                this.mode_alternate();
-                break;
-            }
-          }
+      class YLoading extends HTMLElement {
+        constructor() {
+          super();
+          this.$template = document.createElement('template');
+          this.$template.innerHTML = $template;
+          this.attachShadow({ mode: 'open' });
         }
 
-        customElements.define("yek-loading", YLoading);      
+        connectedCallback() {
+          this.shadowRoot.appendChild(this.$template.content.cloneNode(true));
+          this.$this = this.shadowRoot.querySelector('.loading');
+          this.$children = this.shadowRoot.querySelectorAll('.loading__block');
+          this.$mode = this.dataset.mode;
+          this.$speed = parseInt(this.dataset.speed || `150`);
+          this.render();
+        }
+
+        mode_reverse() {
+          let index = 0;
+          let isReverse = false;
+          window.setInterval(() => {
+            this.$children[index].classList.toggle('loading__block--active');
+            if (isReverse) {
+              if (index - 1 <= 0) isReverse = false;
+              index--;
+            } else {
+              index++;
+              if (index + 1 >= this.$children.length) isReverse = true;
+            }
+          }, this.$speed);
+        }
+
+        mode_alternate() {
+          let index = 0;
+          window.setInterval(() => {
+            this.$children[index].classList.toggle('loading__block--active');
+            index++;
+            if (index + 1 >= this.$children.length) index = 0;
+          }, this.$speed);
+        }
+
+        render() {
+          switch (this.$mode) {
+            case 'reverse':
+              this.mode_reverse();
+              break;
+            case 'alternate':
+            default:
+              this.mode_alternate();
+              break;
+          }
+        }
+      }
+
+      customElements.define('yek-loading', YLoading);
     </script>
   </head>
   <body>
