@@ -12,6 +12,17 @@
   stroke: 0;
   box-shadow: 0;
 }
+@mixin --image-cover {
+  @include yek-size;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+@mixin --ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 @mixin yek-width($w: null, $max: null, $min: null) {
   @if $w == null and $max == null and $min == null {
     width: 100%;
@@ -185,6 +196,8 @@
     $right
   );
 }
+
+// TODO : color maps
 
 // google fonts
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
