@@ -131,9 +131,14 @@ function selectCurrentTrack() {
 }
 function changeMetaData(src) {
   let currentTrack = selectCurrentTrack();
-  $_trackName.textContent = currentTrack.title || defaultTrack.title;
-  $_artist.textContent = fixArtist(currentTrack.artist) || defaultTrack.artist;
-  $_cover.setAttribute('src', currentTrack.cover || defaultTrack.cover);
+  $_trackName.textContent =
+    (currentTrack && currentTrack.title) || defaultTrack.title;
+  $_artist.textContent =
+    fixArtist(currentTrack && currentTrack.artist) || defaultTrack.artist;
+  $_cover.setAttribute(
+    'src',
+    (currentTrack && currentTrack.cover) || defaultTrack.cover
+  );
   src && $audio.setAttribute('src', src);
 }
 
