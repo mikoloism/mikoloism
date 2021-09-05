@@ -15,13 +15,7 @@ because i love ❤️ opensource, did you like it?
 
 > also support drag and drop local sounds
 
-<<<<<<< HEAD
-<img src="./screenshots/screenshot-2.png" title="playing music - man mijangam (yas)" alt="mini-music-player - miko-github - 2021" width="310" height="155" />
-<img src="./screenshots/screenshot-1.png" title="playing music - laila (tony kakkar)" alt="mini music player - mikoloism - 2021" width="310" height="155" />
-<img src="./screenshots/screenshot-3.png" title="drag & drop support" alt="mini music player - mikoloism - 2021" width="310" height="155" />
-=======
 <img src="./screenshots/screenshot-2.png" title="playing music - man mijangam (yas)" alt="mini-music-player - miko-github - 2021" width="300" height="145" /> <img src="./screenshots/screenshot-1.png" title="playing music - laila (tony kakkar)" alt="mini music player - mikoloism - 2021" width="300" height="145" /> <img src="./screenshots/screenshot-3.png" title="drag & drop support" alt="mini music player - mikoloism - 2021" width="300" height="145" />
->>>>>>> 63ca45bdb164652eadf6465f12a0f6651daa65ef
 
 ### License & Thanks
 
