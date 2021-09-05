@@ -222,14 +222,14 @@ listener($audio, 'playing', () => changeMetaData());
 listener(
   $audio,
   'durationchange',
-  () => ($_duration.textContent = fixMoment(parseInt($audio.duration)))
+  () => ($_duration.textContent = fixMoment($audio.duration))
 );
 
 // [audio]:time-update
 listener(
   $audio,
   'timeupdate',
-  () => ($_currentTime.textContent = fixMoment(parseInt($audio.currentTime)))
+  () => ($_currentTime.textContent = fixMoment($audio.currentTime))
 );
 
 // [auido]:time-update
@@ -332,7 +332,7 @@ function fixPercentage(value, total) {
 }
 
 function fixMoment(time) {
-  let $time = moment.duration(time, 'seconds');
+  let $time = moment.duration(parseInt(time), 'seconds');
   let hour = $time.hours();
   let min = $time.minutes();
   let sec = $time.seconds();
