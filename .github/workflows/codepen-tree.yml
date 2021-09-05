@@ -1,48 +1,48 @@
-# This is a basic workflow that is manually triggered
+# # This is a basic workflow that is manually triggered
 
-name: 'codepen-projects'
+# name: 'codepen-projects'
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
-# on: workflow_dispatch
-on:
-  push:
-    branches:
-      - 'cp/**'
+# # Controls when the action will run. Workflow runs when manually triggered using the UI
+# # or API.
+# # on: workflow_dispatch
+# on:
+#   push:
+#     branches:
+#       - 'cp/**'
 
-jobs:
-  build_css:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source Git branch
-        uses: actions/checkout@v2
-      - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/assets/css
-      - name: Compile CSS from SCSS files
-        uses: gha-utilities/sass-build@v0.4.6
-        with:
-          source: style.scss
-          destination: /tmp/assets/css/style.css
-      - name: Upload Complied CSS
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: Compiled-CSS
-          path: /tmp/assets/css
+# jobs:
+#   build_css:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout source Git branch
+#         uses: actions/checkout@v2
+#       - name: Make destination directory for compiled CSS
+#         run: mkdir -vp /tmp/assets/css
+#       - name: Compile CSS from SCSS files
+#         uses: gha-utilities/sass-build@v0.4.6
+#         with:
+#           source: style.scss
+#           destination: /tmp/assets/css/style.css
+#       - name: Upload Complied CSS
+#         uses: actions/upload-artifact@v1.0.0
+#         with:
+#           name: Compiled-CSS
+#           path: /tmp/assets/css
 
-  # install inliner to make just single html file
-  setup_node:
-    needs: build_css
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source Git branch
-        uses: actions/checkout@v2
-      - name: Use NodeJS Enviroment
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Install NPM Dependencies
-        run: npm install
-      - name: Install `inline-scripts`
-        run: npm i inline-scripts
-      - name: Run `inline-scripts`
-        run: node ./node_modules/inline-scripts/src/cli/inlineStylesheets.js index.html .
+#   # install inliner to make just single html file
+#   setup_node:
+#     needs: build_css
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout source Git branch
+#         uses: actions/checkout@v2
+#       - name: Use NodeJS Enviroment
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
+#       - name: Install NPM Dependencies
+#         run: npm install
+#       - name: Install `inline-scripts`
+#         run: npm i inline-scripts
+#       - name: Run `inline-scripts`
+#         run: node ./node_modules/inline-scripts/src/cli/inlineStylesheets.js index.html .
