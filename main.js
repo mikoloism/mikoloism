@@ -55,7 +55,7 @@ let trackList = [
     title: `Rap God`,
     src: `${fixPath}/Eminem%20-%20Rap%20God.mp3`,
     artist: `Eminem`,
-    cover: undefined,
+    cover: `https://i1.sndcdn.com/artworks-000060420372-r3rrjq-t500x500.jpg`,
   },
   {
     id: 5,
