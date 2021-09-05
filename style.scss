@@ -162,9 +162,7 @@ body {
       padding-left: 14px;
       padding-right: 12px;
     }
-    &:hover {
-      // background-color: $_btn-hover;
-    }
+    // TOGGLE : `&:hover { background-color: $_btn-hover; }`
     &:hover i {
       transform: scale(1.2);
       color: $_icon-hover;
