@@ -1,5 +1,5 @@
 // thanks : jsmediatags
-// toggle [play/pause]
+// NOTE [play/pause]
 const $_player = query('#music-player');
 const $_file = query('#file-audio');
 const $_play = query('#music-play');
@@ -108,7 +108,6 @@ let trackList = [
   },
 ];
 
-// +++ Event Handler +++ //
 function fixArtist(artist) {
   if (isType(artist, 'array')) return artist.join(' & ');
   return artist;
@@ -127,7 +126,6 @@ function goBackward() {
   else changeMetaData(trackList[currentTrack.id - 1].src);
   $audio.play();
 }
-
 function selectCurrentTrack() {
   return trackList.filter((track) => track.src == $audio.src)[0];
 }
@@ -139,6 +137,8 @@ function changeMetaData(src) {
   src && $audio.setAttribute('src', src);
 }
 
+// +++ Event Handler +++ //
+// FIXME
 listener($audio, 'durationchange', () => {
   let currentTrack = selectCurrentTrack();
   // fixBase64(currentTrack.src, (file) => {
@@ -148,7 +148,7 @@ listener($audio, 'durationchange', () => {
   //       src: currentTrack.src,
   //       title: tags.title,
   //       artist: tags.artist,
-  //       cover: tags.APIC && fetchCover2(tags.APIC)
+  //       cover: tags.APIC && fetchCover(tags.APIC)
   //     });
   //   });
   // });
@@ -159,37 +159,48 @@ listener($audio, 'durationchange', () => {
 });
 
 // [file]:change
-listener($_file, 'change', function ({ target }) {
+listener($_file, 'change', () => {
   $audio.pause();
-  [...Array(target.files.length).keys()].forEach((index) => {
-    let file = target.files[index];
+  [...Array($_file.files.length).keys()].forEach((index) => {
+    let file = $_file.files[index];
     let src = URL.createObjectURL(file);
-    metadata(file, ({ tags }) => {
-      trackList.push({
+    fetchMetadata(file, (tags) => {
+      let track = {
         id: (() => trackList[trackList.length - 1].id + 1)(),
         title: tags.title,
         cover: tags.picture && fetchCover(tags.picture),
         artist: tags.artist,
         src,
-      });
+      };
+      trackList.push(track);
     });
-    // ALT
-    /**
-    fetchMetadata(file, (tags) => {
-      trackList.push({
-        id: (() => trackList[trackList.length - 1].id + 1)(),
-        title: tags.title,
-        cover: tags.v2.APIC[0] && fetchCover2(tags.v2.APIC[0]),
-        artist: tags.v2.TPE1,
-        src
-      });
-    });
-    */
     changeMetaData(src);
   });
-
   $audio.play();
 });
+
+// ALT
+/*
+listener($_file, 'change', () => {
+  $audio.pause();
+  [...Array($_file.files.length).keys()].forEach((index) => {
+    let file = $_file.files[index];
+    let src = URL.createObjectURL(file);
+    fetchMetadata2(file, (tags) => {
+      let track = {
+        id: (() => trackList[trackList.length - 1].id + 1)(),
+        title: tags.title,
+        cover: tags.v2.APIC[0] && fetchCover(tags.v2.APIC[0]),
+        artist: tags.v2.TPE1,
+        src,
+      };
+      trackList.push(track);
+    });
+    changeMetaData(src);
+  });
+  $audio.play();
+});
+*/
 
 // [file]:drag/drop
 window.ondragenter = (e) => {
@@ -207,15 +218,6 @@ $_player.ondrop = () => {
 listener($audio, 'playing', () => changeMetaData());
 
 // [audio]:canplaythrough
-function fixMoment(time) {
-  let $time = moment.duration(time, 'seconds');
-  let hour = $time.hours();
-  let min = $time.minutes();
-  let sec = $time.seconds();
-  let _hour = hour > 0 ? `${fixPad(hour)} : ` : ``;
-  let _min_sec = `${fixPad(min)} : ${fixPad(sec)}`;
-  return `${_hour}${_min_sec}`;
-}
 
 listener(
   $audio,
@@ -236,10 +238,7 @@ listener($audio, 'timeupdate', () => {
     parseFloat($audio.currentTime),
     parseFloat($audio.duration)
   );
-  document.documentElement.style.setProperty(
-    '--seek_listener_percentage',
-    `${percentage}%`
-  );
+  fixVariable('seek_listener_percentage', `${percentage}%`);
 });
 
 // [seek]:seeked
@@ -250,10 +249,8 @@ listener($_seek, 'click', (ev) => {
   let { offsetWidth: max } = $_seek;
   // calc motion
   let percentage = fixPercentage(value, max);
-  document.documentElement.style.setProperty(
-    '--seek_listener_percentage',
-    `${percentage}%`
-  );
+  // TOGGLE
+  fixVariable('--seek_listener_percentage', `${percentage}%`);
   // calc value
   let amount = fixFloat((percentage / 100) * parseFloat($audio.duration), 3);
   $audio.currentTime = amount;
@@ -287,61 +284,68 @@ listener($audio, 'pause', () => {
   $_play.children.item(0).classList.replace('fa-pause', 'fa-play');
 });
 
-// -
-// -
-// -
-// -
-// -
-// -
 // -----------------------
 
-function metadata(audio, cb) {
+// NOTE : src from `https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js`
+function fetchMetadata(audio, cb) {
   jsmediatags.read(audio, {
-    onSuccess: cb,
+    onSuccess: ({ tags }) => cb(tags),
     onError: function (error) {
       console.log(error);
     },
   });
 }
-function fetchMetadata(url, cb) {
+
+// FIXME : need to sync with other codes
+// NOTE : src from `https://cdn.jsdelivr.net/npm/mp3tag.js@latest/dist/mp3tag.min.js`
+function fetchMetadata2(url, cb) {
   const reader = new FileReader();
   reader.onload = function () {
     const buffer = this.result;
-
     // MP3Tag Usage
     const mp3tag = new MP3Tag(buffer);
     mp3tag.read();
     cb(mp3tag.tags);
   };
-
   reader.readAsArrayBuffer(url);
 }
+
 function fetchCover({ data, format }) {
   let base64String = '';
-  // TODO : for...of || for...in
-  for (let i = 0; i < data.length; i++) {
-    base64String += String.fromCharCode(data[i]);
+  for (let item of data) {
+    base64String += String.fromCharCode(item);
   }
   return `data:${data.format};base64,${window.btoa(base64String)}`;
 }
-function fetchCover2({ data, format }) {
-  let base64String = '';
-  // TODO : for...of || for...in
-  for (let i in data) {
-    base64String += String.fromCharCode(data[i]);
-  }
-  return `data:${data.format};base64,${window.btoa(base64String)}`;
-}
+
 function fixFloat(value, decimals) {
   return Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
 }
+
 function fixPad(number) {
   let num = parseInt(number);
   return num >= 0 && num <= 9 ? `0${num}` : num;
 }
+
 function fixPercentage(value, total) {
   return fixFloat((value / total) * 100, 3);
 }
+
+function fixMoment(time) {
+  let $time = moment.duration(time, 'seconds');
+  let hour = $time.hours();
+  let min = $time.minutes();
+  let sec = $time.seconds();
+  let _hour = hour > 0 ? `${fixPad(hour)} : ` : ``;
+  let _min_sec = `${fixPad(min)} : ${fixPad(sec)}`;
+  return `${_hour}${_min_sec}`;
+}
+
+function fixVariable(variable, value) {
+  document.documentElement.style.setProperty(`--${variable}`, value);
+}
+
+// FIXME : need to use new methods
 function fixBase64(url, cb) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
