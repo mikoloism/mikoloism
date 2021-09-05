@@ -27,28 +27,28 @@ let trackList = [
     title: `Arayeshe Ghaliz`,
     src: `${fixPath}/Homayoun%20Shajarian%20-%20Arayeshe%20Ghaliz.mp3`,
     artist: `Homayoun Shajarian`,
-    cover: undefined,
+    cover: `https://www.ganja2music.com/Image/Post/06.93/08/Homayoun-Shajarian---Arayes.jpg`,
   },
   {
     id: 1,
-    title: `Norouz`,
+    title: `Nowruz`,
     src: `${fixPath}/Homayoun%20Shajarian%20&%20Sohrab%20Pournazeri%20-%20Norouz.mp3`,
     artist: `Homayoun Shajarian`,
-    cover: undefined,
+    cover: `https://myritm.com/Uploads/Pictures/1397-07/H/Homayoun-Shajarian-Norooz-Picture.jpg`,
   },
   {
     id: 2,
-    title: `Shole Var`,
+    title: `Sholeh Var (Flaming)`,
     src: `${fixPath}/Homayoun_shajarian_SholehVar_Final.mp3`,
     artist: `Homayoun Shajarian`,
-    cover: undefined,
+    cover: `https://www.ganja2music.com/Image/Post/5.2021/Homayoun%20Shajarian%20-%20Flaming%20(Sholeh%20Var).jpg`,
   },
   {
     id: 3,
     title: `Saghi Bia`,
     src: `${fixPath}/MohammadReza%20Shajaryan%20-%20Saghi%20Bia.mp3`,
     artist: `Mohammad Reza Shajarian`,
-    cover: undefined,
+    cover: `https://mahurmusic.com/wp-content/uploads/ostad_shajarian_saghi_bia.jpg`,
   },
   {
     id: 4,
@@ -59,52 +59,52 @@ let trackList = [
   },
   {
     id: 5,
-    title: `Bande Naaf`,
+    title: `Bande Naaf Ta Khatte Saaf`,
     src: `${fixPath}/yas-bande-naaf-ta-khatte-saaf-ft-moer.mp3`,
-    artist: `Yas`,
-    cover: undefined,
+    artist: [`Yas`, `Moer`],
+    cover: `https://www.ganja2music.com/Image/Post/3.2018/Yas%20-%20Bande%20Naaf%20Ta%20Khatte%20Saaf%20(Ft%20Moer).jpg`,
   },
   {
     id: 6,
     title: `Halal Osoun`,
     src: `${fixPath}/ali_ardavan%20&%20sohrab%20mj_halal_osoun.mp3`,
     artist: [`Ali Ardavan`, `Sohrab MJ`],
-    cover: undefined,
+    cover: `http://r3d-dl.online/thumb500/AliArdavanHalalOsoun.jpg`,
   },
   {
     id: 7,
     title: `Sobhoone`,
     src: `${fixPath}/Ho3ein%20-%20Sobhoone.mp3`,
     artist: `Ho3ein`,
-    cover: undefined,
+    cover: `https://i1.sndcdn.com/artworks-P62UUTWyllEk4zqO-5e8VaA-t500x500.jpg`,
   },
   {
     id: 8,
     title: `Makhlase Kaloom`,
     src: `${fixPath}/Shayea%20-%20Makhlase%20Kaloom.mp3`,
     artist: `Shayea`,
-    cover: undefined,
+    cover: `https://i1.sndcdn.com/artworks-cWW8UKEe1zhiRgBk-WWS5xQ-t500x500.jpg`,
   },
   {
     id: 9,
     title: `Tukur Tukur`,
     src: `${fixPath}/Tukur%20Tukur%20-%20Arijit%20Singh.mp3`,
-    artist: undefined,
-    cover: undefined,
+    artist: `Pritam Chakraborty`,
+    cover: `https://a10.gaanacdn.com/gn_img/albums/w4MKPgOboj/4MKPanrg3o/size_l.webp`,
   },
   {
     id: 10,
     title: `Tharki Chokro`,
     src: `${fixPath}/01%20-%20Tharki%20Chokro.mp3`,
-    artist: undefined,
-    cover: undefined,
+    artist: `Swaroop Khan`,
+    cover: `https://a10.gaanacdn.com/images/albums/99/265399/crop_480x480_265399.jpg`,
   },
   {
     id: 11,
     title: `Vilayati Sharaab`,
     src: `${fixPath}/Vilayati.Sharaab.mp3`,
     artist: [`Darshan Raval`, `Neeti Mohan`],
-    cover: undefined,
+    cover: `https://a10.gaanacdn.com/gn_img/albums/dwN39y83DP/N39y4Z753D/size_l.jpg`,
   },
 ];
 
@@ -220,7 +220,7 @@ $_player.ondrop = () => {
 };
 
 // [audio]:play
-listener($audio, 'playing', () => changeMetaData());
+listener($audio, 'play', () => changeMetaData());
 
 // [audio]:canplaythrough
 
