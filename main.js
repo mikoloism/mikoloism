@@ -1,4 +1,4 @@
-// thanks : jsmediatags
+// thanks : https://github.com/yek-org/yek-js & https://www.npmjs.com/package/jsmediatags & https://mp3tag.js.org
 // NOTE [play/pause]
 const $_player = query('#music-player');
 const $_file = query('#file-audio');
