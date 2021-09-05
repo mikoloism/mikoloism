@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- # Codepen Base # -->
     <meta charset="UTF-8" />
-    <title>Mikoloism - Fullstack Developer</title>
+    <title>Mikoloism - Mini Music Player (HTML, CSS, JS)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="apple-mobile-web-app-title" content="CodePen" />
     <link
@@ -22,15 +21,31 @@
       href="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
       color="#111"
     />
-    <link rel="icon" href="./assets/image.png" />
-    <meta name="description" content="Mikoloism - Fullstack Developer" />
-    <meta property="og:title" content="Mikoloism - Fullstack Developer" />
-    <meta property="og:description" content="Mikoloism - Fullstack Developer" />
-    <meta property="og:image" content="./assets/image.png" />
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
+    />
+    <meta
+      name="description"
+      content="Mikoloism - Mini Music Player (HTML, SCSS, JS)"
+    />
+    <meta
+      property="og:title"
+      content="Mikoloism - Mini Music Player (HTML, SCSS, JS)"
+    />
+    <meta
+      property="og:description"
+      content="Mikoloism - Mini Music Player (HTML, SCSS, JS)"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
     />
+    <!-- +++ LINKS +++ -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -38,15 +53,6 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body translate="no">
-    <!--
-      TODO :
-      1. music playlist
-      2. info & guide
-      3. shuffle, repeat
-      4. music interactions
-      5. loading
-      -->
-
     <div id="music-player" class="music music__player">
       <audio
         style="display: none"
@@ -121,29 +127,18 @@
         />
       </div>
     </div>
+
     <!-- +++ SCRIPTS +++ -->
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+    <!-- <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script> -->
     <script src="https://cdn.jsdelivr.net/gh/miko-github/miko-github@v0.2.0/codepen.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mp3tag.js@latest/dist/mp3tag.min.js"></script>
-    <script
+    <!-- <script
       src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-2a39695b-e8f0-2522-8509-7b94108d8295"
       crossorigin=""
-    ></script>
-    <script>
-      (function () {
-        var links = document.querySelectorAll('a[href]');
-        links.forEach(function (link) {
-          var href = link.getAttribute('href');
-          if (href.indexOf('#') !== 0) {
-            link.addEventListener('click', function (event) {
-              event.preventDefault();
-            });
-          }
-        });
-      })();
-    </script>
+    ></script> -->
+    <script src="./main.js"></script>
   </body>
 </html>
