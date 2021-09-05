@@ -1,0 +1,270 @@
+@import './_codepen.scss';
+
+/* powered by yek-sass */
+$_background: #d3dcdd;
+$_cool-background: #eaf2ff;
+$_cool-white: #f9fcff;
+$_cool-sky: #add8e6;
+$_cool-blue: #5c9dc0;
+$_cool-green: #bdb369;
+$_cool-black: #002e63;
+$_cool-silver: #eeeeee;
+$_cool-gray: darken(#dbdcdb, 25);
+$_description: #8c9294;
+$_btn-hover: #e5eff9;
+$_icon-hover: $_cool-blue;
+:root {
+  --seek_listener_percentage: 0%;
+}
+
+body {
+  @include yek-aligns;
+  background-color: $_background;
+}
+
+/* +++ MAIN +++ */
+.music {
+  @include yek-flex;
+  @include yek-size(530px, 180px);
+  @include yek-aligns;
+  position: relative;
+  border: 4px desaturate($_cool-white, 45%) solid;
+  overflow: hidden;
+  background-color: $_cool-white;
+  box-shadow: 0 4px 7px rgba($_cool-black, 0.3);
+
+  & {
+    border-radius: 8px;
+  }
+  &__image {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}
+
+/* +++ METADATA +++ */
+.music {
+  &__meta {
+    @include --ellipsis;
+    @include yek-flex;
+    @include yek-size(54.5%, 100%);
+    padding: 6px 24px;
+  }
+  &__name {
+    @include yek-flex;
+    @include yek-aligns(space-between);
+    @include yek-size(100%, calc(100% - 78px));
+  }
+  &__title,
+  &__description {
+    @include --ellipsis;
+    @include yek-width(100%);
+    padding: 5px 0;
+  }
+  &__title {
+    margin: 7px 1px;
+  }
+  &__description {
+    font-size: 0.8rem;
+    // TOOD: move to themes
+    color: darken($_cool-gray, 25);
+  }
+
+  &__cover {
+    @include yek-size(35%, 100%);
+    @include yek-flex;
+    @include yek-aligns;
+  }
+  &__image {
+    @include --image-cover;
+  }
+}
+
+/* +++ UPLOAD +++ */
+.music {
+  &--upload::before,
+  &--upload::after {
+    display: block;
+    position: absolute;
+    background: $_cool-white;
+  }
+  &--upload::after {
+    @include yek-size;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 90;
+  }
+  &--upload::before {
+    $posy: calc(5% - 0px);
+    $posx: calc(2.5% - 0px);
+    @include yek-size(95%, 90%);
+    content: 'DROP HERE...';
+    top: $posy;
+    bottom: $posy;
+    left: $posx;
+    right: $posx;
+    border: 5px dashed $_cool-blue;
+    border-radius: 9px;
+    line-height: 5;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2rem;
+    font-weight: 800;
+    color: $_cool-black;
+    z-index: 95;
+  }
+
+  &__uploader {
+    @include yek-size;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100%;
+    bottom: 100%;
+    opacity: 0;
+    background: #fff;
+    // will-change: top, bottom, display;
+
+    &--show {
+      display: block;
+      top: 0;
+      bottom: 0;
+      z-index: 99;
+    }
+  }
+}
+
+/* +++ CONTROLLERS +++ */
+.music {
+  &__controller {
+    @include yek-size(10.5%, 100%);
+    @include yek-flex(column);
+  }
+
+  &__btn {
+    @include --clear-btn;
+    @include yek-size(100%, 33.33%);
+    cursor: pointer;
+    background-color: transparent;
+
+    & i {
+      padding: 12px;
+      border-radius: 5px;
+      will-change: text-shadow, box-shadow, transform, background-color, color,
+        padding-right, padding-left;
+    }
+    &--pause i {
+      // NOTE : exact center
+      padding-left: 14px;
+      padding-right: 12px;
+    }
+    &:hover {
+      // background-color: $_btn-hover;
+    }
+    &:hover i {
+      transform: scale(1.2);
+      color: $_icon-hover;
+      background-color: $_cool-silver;
+    }
+    &:active i {
+      transform: scale(0.9);
+    }
+  }
+}
+
+// TODO : build, this option
+
+/* +++ MIXINS +++ */
+.music {
+  @mixin --clear-btn-2 {
+    transform: scale(0.9);
+    cursor: pointer;
+    &:hover i {
+      transform: scale(1.1);
+      // color: $_icon-hover;
+      background-color: $_cool-silver;
+    }
+    &:active i {
+      transform: scale(0.8);
+    }
+  }
+
+  &__mixin {
+    @include yek-size(100%, 32px);
+    @include yek-flex;
+    @include yek-aligns(flex-start);
+    display: none;
+  }
+
+  &__shuffle,
+  &__repeat {
+    @include --clear-btn;
+    @include --clear-btn-2;
+    @include yek-size(32px, 32px);
+    background-color: transparent;
+
+    & i {
+      font-size: 0.8rem;
+      padding: 6px;
+      border-radius: 9px;
+      will-change: transform, background-color, color, padding-right,
+        padding-left;
+    }
+  }
+}
+
+/* +++ SEEK/TIMES +++ */
+.music {
+  &__times {
+    @include yek-flex;
+    @include yek-aligns(space-between);
+    @include yek-size(130%, 25px);
+    transform: translateY(20px);
+    color: $_cool-gray;
+  }
+  &__duration,
+  &__current_time {
+    @include yek-size(45%);
+    @include --ellipsis;
+  }
+  &__times,
+  &__duration,
+  &__current_time {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  &__duration {
+    text-align: right;
+    padding-right: 5px;
+  }
+  &__current_time {
+    text-align: left;
+    padding-left: 2px;
+  }
+  &__seek {
+    @include yek-width(100%);
+    background-color: $_cool-sky;
+  }
+  &__seek_handle {
+    @include yek-width(var(--seek_listener_percentage));
+    display: block;
+    background-color: $_cool-blue;
+  }
+  &__seek,
+  &__seek_handle {
+    @include yek-height(3px);
+    border-radius: 9px;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    will-change: height;
+  }
+  &__seek:hover,
+  &__seek:hover &__seek_handle {
+    @include yek-height(5px);
+  }
+}
