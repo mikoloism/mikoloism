@@ -47,9 +47,11 @@
     />
     <!-- +++ LINKS +++ -->
     <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      type="text/css"
     />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body translate="no">
@@ -74,6 +76,7 @@
           title="backward"
           class="music__btn music__btn--back"
         >
+          <!-- ALT : fa-[step, fast, ]-backward -->
           <i class="fa fa-fast-backward"></i>
         </button>
         <button
@@ -88,6 +91,7 @@
           title="forward"
           class="music__btn music__btn--next"
         >
+          <!-- ALT : fa-[step, fast, ]-forward -->
           <i class="fa fa-fast-forward"></i>
         </button>
       </div>
@@ -99,15 +103,19 @@
           </span>
         </div>
 
-        <!-- TODO : build, below options -->
         <div class="music__mixin">
-          <!-- off | once | all -->
-          <button class="music__repeat music__repeat--off">
+          <!-- STATE : --[off | on: [once | all]] -->
+          <button class="music__repeat music__repeat">
+            <!-- ALT : fa-[repeat, sync, sync-alt, retweet, retweet-alt, redo, redo-alt] -->
             <i class="fa fa-repeat"></i>
           </button>
-          <!-- off | on -->
+          <!-- STATE : --[off | on] -->
           <button class="music__shuffle">
             <i class="fa fa-random"></i>
+          </button>
+          <!-- STATE : --[off | on] -->
+          <button class="music__playlist music__playlist">
+            <i class="fa fa-list-music"></i>
           </button>
         </div>
 
