@@ -14,6 +14,7 @@ const $_artist = query('#music-desc');
 const $_repeat = query('#music-repeat');
 const $_shuffle = query('#music-shuffle');
 const $_playlistBtn = query('#music-playlist-btn');
+const $_playlist = query('#music-playlist');
 const $audio = query('#music-audio');
 // is-state
 const state = {
