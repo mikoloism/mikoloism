@@ -121,6 +121,12 @@ function fixArtist(artist) {
   if (isType(artist, 'array')) return artist.join(' & ');
   return artist;
 }
+function stopTrack() {
+  $audio.pause();
+  $audio.currentTime = 0;
+  fixVariable('seek_listener_percentage', `0%`);
+}
+
 function goShuffle() {
   let shuffleIndex = fixRandom(0, trackList.length - 1);
   let selectedTrack = trackList[shuffleIndex];
@@ -129,32 +135,25 @@ function goShuffle() {
   $audio.play();
   return selectedTrack;
 }
-
 function goForward() {
   if (state.isShuffle) return goShuffle();
 
-  // let currentTrack = selectCurrentTrack();
-  $audio.pause();
-
-  // TODO : rewrite below condition
-  if (state.currentTrackIndex + 1 > trackList.length - 1)
-    state.currentTrackIndex = 0;
-  else state.currentTrackIndex += 1;
-
+  // FIXME : `$audio.pause();` should be before changes
+  state.currentTrackIndex =
+    state.currentTrackIndex + 1 > trackList.length - 1
+      ? 0
+      : state.currentTrackIndex + 1;
   changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
 function goBackward() {
   if (state.isShuffle) return goShuffle();
 
-  // let currentTrack = selectCurrentTrack();
-  $audio.pause();
-
-  // TODO : rewrite below condition
-  if (state.currentTrackIndex - 1 < 0)
-    state.currentTrackIndex = trackList.length - 1;
-  else state.currentTrackIndex -= 1;
-
+  // FIXME : `$audio.pause();` should be before changes and play
+  state.currentTrackIndex =
+    state.currentTrackIndex - 1 < 0
+      ? trackList.length - 1
+      : state.currentTrackIndex - 1;
   changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
@@ -176,6 +175,7 @@ function changeMetaData(src) {
 }
 
 function updateRepeat({ repeatCount }) {
+  // TODO : refactor
   switch (repeatCount) {
     case 0:
     default:
@@ -315,9 +315,18 @@ listener($_backward, 'click', () => goBackward());
 // [forward]:click
 listener($_forward, 'click', () => goForward());
 
-// NOTE : when sound finished, if not repeat-1, play next music, else, play again
+/*
+NOTE
+repeat-off => stop()
+repeat-all-track => goForward()
+repeat-one-track => play()
+*/
 listener($audio, 'ended', () =>
-  state.repeatCount !== 1 ? goForward() : $audio.play()
+  state.repeatCount === 0
+    ? stopTrack()
+    : state.repeatCount !== 1
+    ? goForward()
+    : $audio.play()
 );
 
 // [play]:click
