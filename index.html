@@ -56,7 +56,6 @@
   </head>
   <body translate="no">
     <div id="music-player" class="music music__player">
-      <div id="music-playlist" class="music__playlist"></div>
       <audio
         style="display: none"
         id="music-audio"
@@ -96,50 +95,53 @@
           <i class="fa fa-fast-forward"></i>
         </button>
       </div>
-      <div class="music__meta">
-        <div class="music__name">
-          <h3 id="music-title" class="music__title">Arayeshe Ghaliz</h3>
-          <span id="music-desc" class="music__description">
-            Homayoun Shajarian
-          </span>
-        </div>
-
-        <div class="music__mixin">
-          <!-- STATE : --[off | on: [once | all]] -->
-          <button
-            id="music-repeat"
-            class="music__repeat music__repeat--on music__repeat--all"
-          >
-            <!-- ALT : fa-[repeat, sync, sync-alt, retweet, retweet-alt, redo, redo-alt] -->
-            <i class="fa fa-repeat"></i>
-          </button>
-          <!-- STATE : --[off | on] -->
-          <button id="music-shuffle" class="music__shuffle">
-            <i class="fa fa-random"></i>
-          </button>
-          <!-- STATE : --[off | on] -->
-          <button id="music-playlist-btn" class="music__playlist_btn">
-            <i class="fa fa-list-music"></i>
-          </button>
-        </div>
-
-        <div class="music__times">
-          <div id="music-seek" class="music__seek">
-            <span class="music__seek_handle"></span>
+      <div class="music__main">
+        <div id="music-playlist" class="music__playlist"></div>
+        <div class="music__meta">
+          <div class="music__name">
+            <h3 id="music-title" class="music__title">Arayeshe Ghaliz</h3>
+            <span id="music-desc" class="music__description">
+              Homayoun Shajarian
+            </span>
           </div>
-          <span id="music-current-time" class="music__current_time">
-            00:00:00
-          </span>
-          <span id="music-duration" class="music__duration">02:33</span>
+
+          <div class="music__mixin">
+            <!-- STATE : --[off | on: [once | all]] -->
+            <button
+              id="music-repeat"
+              class="music__repeat music__repeat--on music__repeat--all"
+            >
+              <!-- ALT : fa-[repeat, sync, sync-alt, retweet, retweet-alt, redo, redo-alt] -->
+              <i class="fa fa-repeat"></i>
+            </button>
+            <!-- STATE : --[off | on] -->
+            <button id="music-shuffle" class="music__shuffle">
+              <i class="fa fa-random"></i>
+            </button>
+            <!-- STATE : --[off | on] -->
+            <button id="music-playlist-btn" class="music__playlist_btn">
+              <i class="fa fa-list-music"></i>
+            </button>
+          </div>
+
+          <div class="music__times">
+            <div id="music-seek" class="music__seek">
+              <span class="music__seek_handle"></span>
+            </div>
+            <span id="music-current-time" class="music__current_time">
+              00:00:00
+            </span>
+            <span id="music-duration" class="music__duration">02:33</span>
+          </div>
         </div>
-      </div>
-      <div class="music__cover">
-        <img
-          id="music-cover"
-          class="music__image"
-          src="https://www.ganja2music.com/Image/Post/06.93/08/Homayoun-Shajarian---Arayes.jpg"
-          alt="mini music player - miko-github"
-        />
+        <div class="music__cover">
+          <img
+            id="music-cover"
+            class="music__image"
+            src="https://www.ganja2music.com/Image/Post/06.93/08/Homayoun-Shajarian---Arayes.jpg"
+            alt="mini music player - miko-github"
+          />
+        </div>
       </div>
     </div>
 

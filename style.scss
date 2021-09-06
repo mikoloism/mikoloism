@@ -36,6 +36,13 @@ body {
   & {
     border-radius: 8px;
   }
+  &__main {
+    @include yek-flex;
+    @include yek-size(unquote('#{(54.5 + 35)}%'), 100%);
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
   &__image {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -47,7 +54,7 @@ body {
   &__meta {
     @include --ellipsis;
     @include yek-flex;
-    @include yek-size(54.5%, 100%);
+    @include yek-size(60.8%, 100%);
     padding: 6px 24px;
   }
   &__name {
@@ -70,7 +77,7 @@ body {
   }
 
   &__cover {
-    @include yek-size(35%, 100%);
+    @include yek-size(39.2%, 100%);
     @include yek-flex;
     @include yek-aligns;
   }
@@ -274,5 +281,9 @@ body {
 .music {
   &__playlist {
     display: none;
+
+    &--open,
+    &--on {
+    }
   }
 }
