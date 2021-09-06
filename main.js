@@ -13,7 +13,8 @@ const $_trackName = query('#music-title');
 const $_artist = query('#music-desc');
 const $_repeat = query('#music-repeat');
 const $_shuffle = query('#music-shuffle');
-const $_playlistBtn = query('#music-playlist-btn');
+const $_playlist_open = query('#music-playlist-open');
+const $_playlist_close = query('#music-playlist-close');
 const $_playlist = query('#music-playlist');
 const $audio = query('#music-audio');
 // is-state
@@ -196,7 +197,48 @@ function updateRepeat({ repeatCount }) {
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
 }
 
+function generatePlaylist() {
+  // $playlist_item;
+  /*
+  <>
+    <li class="playlist__track playlist__track--options">
+      <button className="playlist__track_btn">
+        <i className="fa fa-more"></i>
+      </button>
+      <input
+        type="radio"
+        class="playlist__track_radio"
+        name="playlist-track-option-radio"
+      />
+      <div className="playlist__track_option">
+        <ul>{...trackOptions}</ul>
+      </div>
+      <div
+        id="playlist-track"
+        class="playlist__track_body"
+        data-src="{track.src}"
+      >
+        <img class="playlist__cover" />
+        <h3 class="playlist__title">{track.title}</h3>
+        <span class="playlist__artist">{fixArtist(track.artist)}</span>
+      </div>
+    </li>
+  </>
+  */
+  //  createElement('li', null, createElement());
+}
+
 // +++ EVENT HANDLERS +++ //
+
+// [playlist]:click
+listener($_playlist_open, 'click', () => {
+  state.isPlaylist = true;
+  $_playlist.classList.add('music__playlist--on');
+});
+listener($_playlist_close, 'click', () => {
+  state.isPlaylist = false;
+  $_playlist.classList.remove('music__playlist--on');
+});
 
 // [repeat-btn]:click
 listener($_repeat, 'click', () => {

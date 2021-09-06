@@ -206,7 +206,7 @@ body {
   &__volume,
   &__shuffle,
   &__repeat,
-  &__playlist_btn {
+  &__playlist_open {
     @include --clear-btn;
     @include --clear-btn-2;
     @include yek-size(33.33%, 25px);
@@ -280,10 +280,18 @@ body {
 /* +++ PLAYLIST +++ */
 .music {
   &__playlist {
-    display: none;
+    transition: 0.3s;
+    @include absolute(100%, 0, 100%, 0);
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 99;
 
     &--open,
     &--on {
+      @include yek-flex;
+      top: 0;
+      bottom: 0;
+      background: $_cool-silver;
     }
   }
 }
