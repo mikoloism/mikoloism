@@ -52,21 +52,20 @@ body {
   }
   &__name {
     @include yek-flex;
-    @include yek-aligns(space-between);
-    @include yek-size(100%, calc(100% - 78px));
+    // TOGGLE @include yek-aligns(flex-start);
+    @include yek-size(100%, calc(100% - 80px));
   }
   &__title,
   &__description {
     @include --ellipsis;
     @include yek-width(100%);
-    padding: 5px 0;
+    padding: 6px 0;
   }
   &__title {
-    margin: 7px 1px;
+    margin: 0;
   }
   &__description {
     font-size: 0.8rem;
-    // TOOD: move to themes
     color: darken($_cool-gray, 25);
   }
 
@@ -177,29 +176,28 @@ body {
 // TODO : build, this option
 
 /* +++ MIXINS +++ */
-.music {
-  @mixin --clear-btn-2 {
-    transform: scale(0.9);
-    cursor: pointer;
-    &:hover i {
-      transform: scale(1.1);
-      // color: $_icon-hover;
-      background-color: $_cool-silver;
-    }
-    &:active i {
-      transform: scale(0.8);
-    }
+@mixin --clear-btn-2 {
+  transform: scale(0.85);
+  cursor: pointer;
+  &:hover i {
+    transform: scale(1.2);
+    background-color: $_cool-silver;
   }
-
+  &:active i {
+    transform: scale(0.9);
+  }
+}
+.music {
   &__mixin {
-    @include yek-size(100%, 32px);
+    @include yek-size(50%, 35px);
     @include yek-flex;
-    @include yek-aligns(flex-start);
-    display: none;
+    @include yek-aligns(space-between);
+    margin-left: -6px;
   }
 
   &__shuffle,
-  &__repeat {
+  &__repeat,
+  &__playlist {
     @include --clear-btn;
     @include --clear-btn-2;
     @include yek-size(32px, 32px);
@@ -207,10 +205,14 @@ body {
 
     & i {
       font-size: 0.8rem;
-      padding: 6px;
+      padding: 12px;
       border-radius: 9px;
       will-change: transform, background-color, color, padding-right,
         padding-left;
+    }
+
+    &--on i {
+      color: $_icon-hover;
     }
   }
 }
@@ -221,7 +223,7 @@ body {
     @include yek-flex;
     @include yek-aligns(space-between);
     @include yek-size(130%, 25px);
-    transform: translateY(20px);
+    // TODO : if neccery `transform: translateY(-20px);`
     color: $_cool-gray;
   }
   &__duration,
