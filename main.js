@@ -129,6 +129,7 @@ function goBackward() {
 function selectCurrentTrack() {
   return trackList.filter((track) => track.src == $audio.src)[0];
 }
+// TODO : rename to `updateMetaData`
 function changeMetaData(src) {
   let currentTrack = selectCurrentTrack();
   $_trackName.textContent =
@@ -220,7 +221,7 @@ $_player.ondrop = () => {
 };
 
 // [audio]:play
-listener($audio, 'play', () => changeMetaData());
+listener($audio, 'playing', () => changeMetaData());
 
 // [audio]:canplaythrough
 
