@@ -11,7 +11,16 @@ const $_currentTime = query('#music-current-time');
 const $_cover = query('#music-cover');
 const $_trackName = query('#music-title');
 const $_artist = query('#music-desc');
+const $_repeat = query('#music-repeat');
+const $_shuffle = query('#music-shuffle');
+const $_playlistBtn = query('#music-playlist-btn');
 const $audio = query('#music-audio');
+// is-state
+const state = {
+  currentTrackIndex: 0,
+  repeatCount: 0,
+  isShuffle: false,
+};
 const defaultTrack = {
   // id: (() => trackList.slice(-1).id + 1)(),
   cover: `https://www.iphonefaq.org/files/styles/large/public/apple_music.jpg?itok=nqYGxWgh`,
@@ -112,18 +121,41 @@ function fixArtist(artist) {
   if (isType(artist, 'array')) return artist.join(' & ');
   return artist;
 }
+function goShuffle() {
+  let shuffleIndex = fixRandom(0, trackList.length - 1);
+  let selectedTrack = trackList[shuffleIndex];
+  $audio.pause();
+  changeMetaData(selectedTrack.src);
+  $audio.play();
+  return selectedTrack;
+}
+
 function goForward() {
-  let currentTrack = selectCurrentTrack();
-  if (currentTrack.id + 1 > trackList.length - 1)
-    changeMetaData(trackList[0].src);
-  else changeMetaData(trackList[currentTrack.id + 1].src);
+  if (state.isShuffle) return goShuffle();
+
+  // let currentTrack = selectCurrentTrack();
+  $audio.pause();
+
+  // TODO : rewrite below condition
+  if (state.currentTrackIndex + 1 > trackList.length - 1)
+    state.currentTrackIndex = 0;
+  else state.currentTrackIndex += 1;
+
+  changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
 function goBackward() {
-  let currentTrack = selectCurrentTrack();
-  if (currentTrack.id - 1 < 0)
-    changeMetaData(trackList[trackList.length - 1].src);
-  else changeMetaData(trackList[currentTrack.id - 1].src);
+  if (state.isShuffle) return goShuffle();
+
+  // let currentTrack = selectCurrentTrack();
+  $audio.pause();
+
+  // TODO : rewrite below condition
+  if (state.currentTrackIndex - 1 < 0)
+    state.currentTrackIndex = trackList.length - 1;
+  else state.currentTrackIndex -= 1;
+
+  changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
 function selectCurrentTrack() {
@@ -140,28 +172,44 @@ function changeMetaData(src) {
     'src',
     (currentTrack && currentTrack.cover) || defaultTrack.cover
   );
-  src && $audio.setAttribute('src', src);
+  return src && $audio.setAttribute('src', src);
+}
+
+function updateRepeat({ repeatCount }) {
+  switch (repeatCount) {
+    case 0:
+    default:
+      $_repeat.className.indexOf('music__repeat--all') &&
+        $_repeat.classList.remove('music__repeat--all');
+      break;
+    case 1:
+      $_repeat.classList.add('music__repeat--once');
+      break;
+    case 2:
+      $_repeat.classList.remove('music__repeat--once');
+      $_repeat.classList.add('music__repeat--all');
+      break;
+  }
+
+  repeatCount === 1
+    ? $_repeat.firstElementChild.classList.replace('fa-repeat', 'fa-repeat-1')
+    : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
+
+  return repeatCount !== 0
+    ? $_repeat.classList.add('music__repeat--on')
+    : $_repeat.className.indexOf('music__repeat--on') &&
+        $_repeat.classList.remove('music__repeat--on');
 }
 
 // +++ Event Handler +++ //
-// FIXME
-listener($audio, 'durationchange', () => {
-  let currentTrack = selectCurrentTrack();
-  // fixBase64(currentTrack.src, (file) => {
-  //   fetchMetadata(file, (tags) => {
-  //     trackList.splice(currentTrack.id - 1, 1, {
-  //       id: (() => trackList[trackList.length - 1].id + 1)(),
-  //       src: currentTrack.src,
-  //       title: tags.title,
-  //       artist: tags.artist,
-  //       cover: tags.APIC && fetchCover(tags.APIC)
-  //     });
-  //   });
-  // });
-  // // fixBase64(currentTrack.src, (file) => {
-  // // metadata(currentTrack.src, ({ tags }) => {
-  // // });
-  // // });
+// [shuffle-btn]:click
+listener($_repeat, 'click', () => {
+  state.repeatCount = state.repeatCount + 1 > 2 ? 0 : state.repeatCount + 1;
+  updateRepeat(state);
+});
+listener($_shuffle, 'click', () => {
+  $_shuffle.classList.toggle('music__shuffle--on');
+  state.isShuffle = !state.isShuffle;
 });
 
 // [file]:change
@@ -224,7 +272,6 @@ $_player.ondrop = () => {
 listener($audio, 'playing', () => changeMetaData());
 
 // [audio]:canplaythrough
-
 listener(
   $audio,
   'durationchange',
@@ -268,8 +315,10 @@ listener($_backward, 'click', () => goBackward());
 // [forward]:click
 listener($_forward, 'click', () => goForward());
 
-// NOTE : when sound finished, then, play next music
-listener($audio, 'ended', () => goForward());
+// NOTE : when sound finished, if not repeat-1, play next music, else, play again
+listener($audio, 'ended', () =>
+  state.repeatCount !== 1 ? goForward() : $audio.play()
+);
 
 // [play]:click
 listener($_play, 'click', () =>
@@ -363,4 +412,10 @@ function fixBase64(url, cb) {
   };
   xhr.onerror = () => console.log(`[fixBase64] : network error!`);
   xhr.send();
+}
+
+function fixRandom(min, max) {
+  let _min = max ? min : 0;
+  let _max = max || min;
+  return Math.floor(Math.random() * (_max - _min + 1)) + _min;
 }
