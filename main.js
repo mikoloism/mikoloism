@@ -18,7 +18,7 @@ const $audio = query('#music-audio');
 // is-state
 const state = {
   currentTrackIndex: 0,
-  repeatCount: 0,
+  repeatCount: 2,
   isShuffle: false,
 };
 const defaultTrack = {
