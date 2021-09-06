@@ -139,10 +139,8 @@ function goForward() {
   if (state.isShuffle) return goShuffle();
 
   // FIXME : `$audio.pause();` should be before changes
-  state.currentTrackIndex =
-    state.currentTrackIndex + 1 > trackList.length - 1
-      ? 0
-      : state.currentTrackIndex + 1;
+  state.currentTrackIndex +=
+    state.currentTrackIndex + 1 > trackList.length - 1 ? 0 : 1;
   changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
@@ -150,10 +148,8 @@ function goBackward() {
   if (state.isShuffle) return goShuffle();
 
   // FIXME : `$audio.pause();` should be before changes and play
-  state.currentTrackIndex =
-    state.currentTrackIndex - 1 < 0
-      ? trackList.length - 1
-      : state.currentTrackIndex - 1;
+  state.currentTrackIndex -=
+    state.currentTrackIndex - 1 < 0 ? -(trackList.length - 1) : 1;
   changeMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
@@ -204,7 +200,7 @@ function updateRepeat({ repeatCount }) {
 // +++ Event Handler +++ //
 // [shuffle-btn]:click
 listener($_repeat, 'click', () => {
-  state.repeatCount = state.repeatCount + 1 > 2 ? 0 : state.repeatCount + 1;
+  state.repeatCount += state.repeatCount + 1 > 2 ? 0 : 1;
   updateRepeat(state);
 });
 listener($_shuffle, 'click', () => {
