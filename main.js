@@ -21,6 +21,7 @@ const state = {
   currentTrackIndex: 0,
   repeatCount: 2,
   isShuffle: false,
+  isPlaylist: false,
 };
 const defaultTrack = {
   // id: (() => trackList.slice(-1).id + 1)(),
@@ -118,6 +119,8 @@ let trackList = [
   },
 ];
 
+// +++ HELPER FUNCTIONS +++ //
+
 function fixArtist(artist) {
   if (isType(artist, 'array')) return artist.join(' & ');
   return artist;
@@ -127,12 +130,11 @@ function stopTrack() {
   $audio.currentTime = 0;
   fixVariable('seek_listener_percentage', `0%`);
 }
-
 function goShuffle() {
   let shuffleIndex = fixRandom(0, trackList.length - 1);
   let selectedTrack = trackList[shuffleIndex];
   $audio.pause();
-  changeMetaData(selectedTrack.src);
+  updateMetaData(selectedTrack.src);
   $audio.play();
   return selectedTrack;
 }
@@ -142,7 +144,7 @@ function goForward() {
   // FIXME : `$audio.pause();` should be before changes
   state.currentTrackIndex +=
     state.currentTrackIndex + 1 > trackList.length - 1 ? 0 : 1;
-  changeMetaData(trackList[state.currentTrackIndex].src);
+  updateMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
 function goBackward() {
@@ -151,27 +153,16 @@ function goBackward() {
   // FIXME : `$audio.pause();` should be before changes and play
   state.currentTrackIndex -=
     state.currentTrackIndex - 1 < 0 ? -(trackList.length - 1) : 1;
-  changeMetaData(trackList[state.currentTrackIndex].src);
+  updateMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
-function selectCurrentTrack() {
-  return trackList.filter((track) => track.src == $audio.src)[0];
-}
-// TODO : rename to `updateMetaData`
-// TODO : review below function
-function changeMetaData(src) {
-  let currentTrack = selectCurrentTrack();
-  $_trackName.textContent =
-    (currentTrack && currentTrack.title) || defaultTrack.title;
-  $_artist.textContent =
-    fixArtist(currentTrack && currentTrack.artist) || defaultTrack.artist;
-  $_cover.setAttribute(
-    'src',
-    (currentTrack && currentTrack.cover) || defaultTrack.cover
-  );
+function updateMetaData(src) {
+  let currentTrack = trackList[state.currentTrackIndex];
+  $_trackName.textContent = currentTrack.title || defaultTrack.title;
+  $_artist.textContent = fixArtist(currentTrack.artist) || defaultTrack.artist;
+  $_cover.setAttribute('src', currentTrack.cover || defaultTrack.cover);
   return src && $audio.setAttribute('src', src);
 }
-
 function updateRepeat({ repeatCount }) {
   // TODO : refactor
   switch (repeatCount) {
@@ -205,12 +196,14 @@ function updateRepeat({ repeatCount }) {
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
 }
 
-// +++ Event Handler +++ //
-// [shuffle-btn]:click
+// +++ EVENT HANDLERS +++ //
+
+// [repeat-btn]:click
 listener($_repeat, 'click', () => {
   state.repeatCount -= state.repeatCount - 1 < 0 ? -2 : 1;
   updateRepeat(state);
 });
+// [shuffle-btn]:click
 listener($_shuffle, 'click', () => {
   $_shuffle.classList.toggle('music__shuffle--on');
   state.isShuffle = !state.isShuffle;
@@ -232,7 +225,7 @@ listener($_file, 'change', () => {
       };
       trackList.push(track);
     });
-    changeMetaData(src);
+    updateMetaData(src);
   });
   $audio.play();
 });
@@ -254,7 +247,7 @@ listener($_file, 'change', () => {
       };
       trackList.push(track);
     });
-    changeMetaData(src);
+    updateMetaData(src);
   });
   $audio.play();
 });
@@ -273,7 +266,7 @@ $_player.ondrop = () => {
 };
 
 // [audio]:play
-listener($audio, 'playing', () => changeMetaData());
+listener($audio, 'playing', () => updateMetaData());
 
 // [audio]:canplaythrough
 listener(
@@ -320,6 +313,7 @@ listener($_backward, 'click', () => goBackward());
 listener($_forward, 'click', () => goForward());
 
 /*
+TODO : review
 NOTE
 repeat-off => stop()
 repeat-all-track => goForward()
@@ -352,7 +346,7 @@ listener($audio, 'pause', () => {
   $_play.children.item(0).classList.replace('fa-pause', 'fa-play');
 });
 
-// -----------------------
+// +++ VENDORS +++ //
 
 // NOTE : src from `https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js`
 function fetchMetadata(audio, cb) {
