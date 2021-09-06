@@ -174,29 +174,34 @@ function changeMetaData(src) {
 function updateRepeat({ repeatCount }) {
   // TODO : refactor
   switch (repeatCount) {
+    case 2:
+    default:
+      $_repeat.className.indexOf('music__repeat--once') != -1 &&
+        $_repeat.classList.remove('music__repeat--once');
+      $_repeat.className.indexOf('music__repeat--on') == -1 &&
+        $_repeat.classList.add('music__repeat--on');
+      $_repeat.classList.add('music__repeat--all');
+      break;
     case 0:
       $_repeat.className.indexOf('music__repeat--all') != -1 &&
         $_repeat.classList.remove('music__repeat--all');
-      break;
-    case 1:
-      $_repeat.classList.add('music__repeat--once');
-      break;
-    default:
-    case 2:
       $_repeat.className.indexOf('music__repeat--once') != -1 &&
         $_repeat.classList.remove('music__repeat--once');
-      $_repeat.classList.add('music__repeat--all');
+      $_repeat.className.indexOf('music__repeat--on') != -1 &&
+        $_repeat.classList.remove('music__repeat--on');
+      break;
+    case 1:
+      $_repeat.className.indexOf('music__repeat--all') != -1 &&
+        $_repeat.classList.remove('music__repeat--all');
+      $_repeat.className.indexOf('music__repeat--on') == -1 &&
+        $_repeat.classList.add('music__repeat--on');
+      $_repeat.classList.add('music__repeat--once');
       break;
   }
 
-  repeatCount === 1
+  return repeatCount === 1
     ? $_repeat.firstElementChild.classList.replace('fa-repeat', 'fa-repeat-1')
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
-
-  return repeatCount !== 0
-    ? $_repeat.classList.add('music__repeat--on')
-    : $_repeat.className.indexOf('music__repeat--on') != -1 &&
-        $_repeat.classList.remove('music__repeat--on');
 }
 
 // +++ Event Handler +++ //
