@@ -157,6 +157,7 @@ function selectCurrentTrack() {
   return trackList.filter((track) => track.src == $audio.src)[0];
 }
 // TODO : rename to `updateMetaData`
+// TODO : review below function
 function changeMetaData(src) {
   let currentTrack = selectCurrentTrack();
   $_trackName.textContent =
@@ -174,15 +175,16 @@ function updateRepeat({ repeatCount }) {
   // TODO : refactor
   switch (repeatCount) {
     case 0:
-    default:
-      $_repeat.className.indexOf('music__repeat--all') &&
+      $_repeat.className.indexOf('music__repeat--all') != -1 &&
         $_repeat.classList.remove('music__repeat--all');
       break;
     case 1:
       $_repeat.classList.add('music__repeat--once');
       break;
+    default:
     case 2:
-      $_repeat.classList.remove('music__repeat--once');
+      $_repeat.className.indexOf('music__repeat--once') != -1 &&
+        $_repeat.classList.remove('music__repeat--once');
       $_repeat.classList.add('music__repeat--all');
       break;
   }
@@ -193,14 +195,14 @@ function updateRepeat({ repeatCount }) {
 
   return repeatCount !== 0
     ? $_repeat.classList.add('music__repeat--on')
-    : $_repeat.className.indexOf('music__repeat--on') &&
+    : $_repeat.className.indexOf('music__repeat--on') != -1 &&
         $_repeat.classList.remove('music__repeat--on');
 }
 
 // +++ Event Handler +++ //
 // [shuffle-btn]:click
 listener($_repeat, 'click', () => {
-  state.repeatCount += state.repeatCount + 1 > 2 ? 0 : 1;
+  state.repeatCount -= state.repeatCount - 1 < 0 ? -2 : 1;
   updateRepeat(state);
 });
 listener($_shuffle, 'click', () => {
