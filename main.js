@@ -140,6 +140,8 @@ function goShuffle() {
   $audio.play();
   return selectedTrack;
 }
+
+// FIXME : didn't play from last track to first track
 function goForward() {
   if (state.isShuffle) return goShuffle();
 
@@ -358,6 +360,7 @@ listener($_forward, 'click', () => goForward());
 
 /*
 TODO : review
+FIXME : didn't play from last track to first track
 NOTE
 repeat-off => stop()
 repeat-all-track => goForward()
