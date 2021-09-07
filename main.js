@@ -14,8 +14,9 @@ const $_artist = query('#music-desc');
 const $_repeat = query('#music-repeat');
 const $_shuffle = query('#music-shuffle');
 const $_playlist_open = query('#music-playlist-open');
-const $_playlist_close = query('#music-playlist-close');
+// const $_playlist_close = query('#music-playlist-close');
 const $_playlist = query('#music-playlist');
+const $_playlist_tracks = query('#playlist-tracks');
 const $audio = query('#music-audio');
 // is-state
 const state = {
@@ -197,35 +198,35 @@ function updateRepeat({ repeatCount }) {
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
 }
 
-function generatePlaylist() {
-  // $playlist_item;
-  /*
-  <>
-    <li class="playlist__track playlist__track--options">
-      <button className="playlist__track_btn">
-        <i className="fa fa-more"></i>
-      </button>
-      <input
-        type="radio"
-        class="playlist__track_radio"
-        name="playlist-track-option-radio"
-      />
-      <div className="playlist__track_option">
-        <ul>{...trackOptions}</ul>
-      </div>
-      <div
-        id="playlist-track"
-        class="playlist__track_body"
-        data-src="{track.src}"
-      >
-        <img class="playlist__cover" />
-        <h3 class="playlist__title">{track.title}</h3>
-        <span class="playlist__artist">{fixArtist(track.artist)}</span>
-      </div>
-    </li>
-  </>
-  */
-  //  createElement('li', null, createElement());
+// TODO : playlist
+const playlistItem = ({ id, src, cover, title, artist }) => {
+  const bem = 'playlist';
+  return createElement(
+    'li',
+    {
+      class: `${bem}__track`,
+      id: `playlist-track-${id}`,
+      'data-src': src,
+      'data-id': id,
+    },
+    [
+      createElement('img', {
+        src: cover,
+        class: `${bem}__cover`,
+        alt: `cover of ${title} from ${fixArtist(artist)}`,
+      }),
+      createElement('div', { class: `${bem}__meta` }, [
+        // TOGGLE : [h3:strong]
+        createElement('strong', { class: `${bem}__title` }, title),
+        createElement('span', { class: `${bem}__artist` }, fixArtist(artist)),
+      ]),
+    ]
+  );
+};
+function generatePlaylist(tracks = trackList) {
+  let $tracks = tracks.map((track) => playlistItem(track));
+  // $_playlist_tracks.innerHTML = ``;
+  return $tracks.map(($track) => append($_playlist_tracks, $track));
 }
 
 // +++ EVENT HANDLERS +++ //
@@ -234,11 +235,12 @@ function generatePlaylist() {
 listener($_playlist_open, 'click', () => {
   state.isPlaylist = true;
   $_playlist.classList.add('music__playlist--on');
+  return generatePlaylist();
 });
-listener($_playlist_close, 'click', () => {
-  state.isPlaylist = false;
-  $_playlist.classList.remove('music__playlist--on');
-});
+// listener($_playlist_close, 'click', () => {
+//   state.isPlaylist = false;
+//   $_playlist.classList.remove('music__playlist--on');
+// });
 
 // [repeat-btn]:click
 listener($_repeat, 'click', () => {
