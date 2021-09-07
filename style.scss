@@ -282,16 +282,68 @@ body {
   &__playlist {
     transition: 0.3s;
     @include absolute(100%, 0, 100%, 0);
-    overflow: hidden;
-    overflow-y: auto;
-    z-index: 99;
+    z-index: 70;
+    display: none;
 
     &--open,
     &--on {
+      display: block;
       @include yek-flex;
       top: 0;
       bottom: 0;
       background: $_cool-silver;
     }
+  }
+}
+.music__playlist,
+.playlist__track_list {
+  overflow: hidden;
+}
+.playlist__track_list {
+  @include --clear-list;
+  overflow-y: auto;
+}
+$--track-size: 90px;
+$--cover-size: 70px;
+.playlist {
+  &__track_list {
+    @include yek-size;
+    @include yek-flex;
+    @include yek-align(space-around, flex-start, flex-start);
+    &:focus {
+      @include --clear-btn;
+    }
+  }
+
+  &__track {
+    @include yek-flex;
+    @include yek-size(90%, $--track-size);
+    background-color: $_cool-white;
+    margin: 9px auto;
+    padding: 10px;
+    border-radius: 15px;
+    &:hover {
+      background-color: $_btn-hover;
+      cursor: pointer;
+    }
+  }
+
+  &__cover {
+    @include --image-cover;
+    @include yek-size($--cover-size, $--cover-size);
+    border-radius: 9px;
+  }
+
+  &__meta {
+    @include yek-flex(column);
+    @include yek-size(calc(100% - $--cover-size), 100%);
+    @include yek-align(space-between, flex-start, flex-start);
+    padding: 9px;
+  }
+
+  &__title,
+  &__artist {
+    @include --ellipsis;
+    @include yek-width;
   }
 }
