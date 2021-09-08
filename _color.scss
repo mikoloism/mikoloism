@@ -1,5 +1,12 @@
 @use 'sass:list';
 
+// TODO : write below
+// NOTE : the function/mixin who can convert color variable in scss to css color variable
+@mixin create-color($name, $value) {
+  // FIXME : below not work
+  // @at-root '--#{$name}':$value;
+}
+
 @function get-color($color-palette, $index: 1) {
   $length: list.length($color-palette);
   @if $index <= $length and $index >= 1 {
@@ -184,3 +191,54 @@ $color--easy-web-tones: (
 @function color--easy-web-tones($index) {
   @return get-color($color--easy-web-tones, $index);
 }
+
+// +++ RITUAL +++ //
+$color--ritual: (
+  // light
+  #ffffff,
+  // light-silver
+  #e1dee6,
+  // light-navy
+  #142b6f,
+  // gold
+  #ffd601
+);
+@function color--ritual($index) {
+  @return get-color($color--ritual, $index);
+}
+
+// +++ MONSIR +++ //
+$color--monsir: (
+  // light
+  #ffffff,
+  // semi-black
+  #292929,
+  // light-sea-blue
+  #4871f7,
+  // dark-tomato
+  #f7484e,
+  // semi-gold
+  #f7d448
+);
+@function color--monsir($index) {
+  @return get-color($color--monsir, $index);
+}
+
+// +++ PERISAN +++ //
+$color--perisan: (
+  // charcoal
+  #264653,
+  // persian-green
+  #2a9d8f,
+  // orange-yellow-crayola
+  #e9c46a,
+  // sandy-brown
+  #f4a261,
+  // burnt-sienna
+  #e76f51
+);
+@function color--perisan($index) {
+  @return get-color($color--perisan, $index);
+}
+
+// TODO : special-color for caulculating
