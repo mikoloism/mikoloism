@@ -24,6 +24,9 @@ const state = {
   repeatCount: 2,
   isShuffle: false,
   isPlaylist: false,
+  playlist: {
+    currentItem: null,
+  },
 };
 const defaultTrack = {
   // id: (() => trackList.slice(-1).id + 1)(),
@@ -144,6 +147,8 @@ function goShuffle() {
 function goForward() {
   if (state.isShuffle) return goShuffle();
 
+  if (state.isPlaylist) goCurrentPlaylistItem();
+
   // FIXME : `$audio.pause();` should be before changes
   state.currentTrackIndex +=
     state.currentTrackIndex + 1 > trackList.length - 1 ? 0 : 1;
@@ -152,6 +157,8 @@ function goForward() {
 }
 function goBackward() {
   if (state.isShuffle) return goShuffle();
+
+  if (state.isPlaylist) goCurrentPlaylistItem();
 
   // FIXME : `$audio.pause();` should be before changes and play
   state.currentTrackIndex -=
@@ -198,6 +205,17 @@ function updateRepeat({ repeatCount }) {
     ? $_repeat.firstElementChild.classList.replace('fa-repeat', 'fa-repeat-1')
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
 }
+function goCurrentPlaylistItem() {
+  let $currentItem = [...$_playlist_tracks.children].filter(
+    ($track) =>
+      parseInt($track.dataset.id) == trackList[state.currentTrackIndex].id
+  )[0];
+  $currentItem.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest',
+  });
+}
 
 // TODO : playlist
 const playlistItem = ({ id, src, cover, title, artist }) => {
@@ -226,11 +244,8 @@ const playlistItem = ({ id, src, cover, title, artist }) => {
 };
 function generatePlaylist(tracks = trackList) {
   let $tracks = tracks.map((track) => playlistItem(track));
-  let $currentTrack = $tracks.filter(
-    ($track) => $track.dataset.id == tracks[state.currentTrackIndex].id
-  )[0];
   $tracks.map(($track) => append($_playlist_tracks, $track));
-  return $currentTrack.scrollIntoView({ behavior: 'smooth' });
+  return goCurrentPlaylistItem();
 }
 
 // +++ EVENT HANDLERS +++ //
