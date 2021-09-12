@@ -306,6 +306,11 @@ body {
 $--track-size: 90px;
 $--cover-size: 70px;
 .playlist {
+  &__close_btn {
+    @include --clear-btn;
+    @include --clear-btn-2;
+    @include absolute(5px);
+  }
   &__track_list {
     @include yek-size;
     @include yek-flex;

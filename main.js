@@ -14,7 +14,7 @@ const $_artist = query('#music-desc');
 const $_repeat = query('#music-repeat');
 const $_shuffle = query('#music-shuffle');
 const $_playlist_open = query('#music-playlist-open');
-// const $_playlist_close = query('#music-playlist-close');
+const $_playlist_close = query('#playlist-close-btn');
 const $_playlist = query('#music-playlist');
 const $_playlist_tracks = query('#playlist-tracks');
 const $audio = query('#music-audio');
@@ -135,13 +135,12 @@ function stopTrack() {
 function goShuffle() {
   let shuffleIndex = fixRandom(0, trackList.length - 1);
   let selectedTrack = trackList[shuffleIndex];
-  $audio.pause();
+  // $audio.pause();
   updateMetaData(selectedTrack.src);
   $audio.play();
   return selectedTrack;
 }
 
-// FIXME : didn't play from last track to first track
 function goForward() {
   if (state.isShuffle) return goShuffle();
 
@@ -227,8 +226,11 @@ const playlistItem = ({ id, src, cover, title, artist }) => {
 };
 function generatePlaylist(tracks = trackList) {
   let $tracks = tracks.map((track) => playlistItem(track));
-  // $_playlist_tracks.innerHTML = ``;
+  /* let $currentTrack = $tracks.filter(
+    ($track) => $track.dataset.id == tracks[state.currentTrackIndex]
+  )[0]; */
   return $tracks.map(($track) => append($_playlist_tracks, $track));
+  // $currentTrack.scrollIntoView({ behavior: 'smooth' });
 }
 
 // +++ EVENT HANDLERS +++ //
@@ -239,10 +241,11 @@ listener($_playlist_open, 'click', () => {
   $_playlist.classList.add('music__playlist--on');
   return generatePlaylist();
 });
-// listener($_playlist_close, 'click', () => {
-//   state.isPlaylist = false;
-//   $_playlist.classList.remove('music__playlist--on');
-// });
+listener($_playlist_close, 'click', () => {
+  state.isPlaylist = false;
+  $_playlist_tracks.innerHTML = ``;
+  $_playlist.classList.remove('music__playlist--on');
+});
 
 // [repeat-btn]:click
 listener($_repeat, 'click', () => {
@@ -257,7 +260,7 @@ listener($_shuffle, 'click', () => {
 
 // [file]:change
 listener($_file, 'change', () => {
-  $audio.pause();
+  // $audio.pause();
   [...Array($_file.files.length).keys()].forEach((index) => {
     let file = $_file.files[index];
     let src = URL.createObjectURL(file);
@@ -301,7 +304,7 @@ listener($_file, 'change', () => {
 
 // [file]:drag/drop
 window.ondragenter = (e) => {
-  $audio.pause();
+  // $audio.pause();
   $_file.classList.add('music__uploader--show');
   $_player.classList.add('music--upload');
 };
@@ -358,20 +361,16 @@ listener($_backward, 'click', () => goBackward());
 // [forward]:click
 listener($_forward, 'click', () => goForward());
 
-/*
-TODO : review
-FIXME : didn't play from last track to first track
-NOTE
-repeat-off => stop()
-repeat-all-track => goForward()
-repeat-one-track => play()
-*/
-listener($audio, 'ended', () =>
-  state.repeatCount === 0
-    ? stopTrack()
-    : state.repeatCount !== 1
-    ? goForward()
-    : $audio.play()
+listener(
+  $audio,
+  'ended',
+  () =>
+    // repeat-all-track
+    (state.repeatCount === 2 && $audio.play()) ||
+    // repeat-once-track
+    (state.repeatCount !== 1 && goForward()) ||
+    // dont-repeat
+    stopTrack()
 );
 
 // [play]:click
