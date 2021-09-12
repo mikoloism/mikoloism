@@ -331,6 +331,9 @@ $--cover-size: 70px;
       background-color: $_btn-hover;
       cursor: pointer;
     }
+    &--current {
+      background: bisque;
+    }
   }
 
   &__cover {

@@ -210,6 +210,13 @@ function goCurrentPlaylistItem() {
     ($track) =>
       parseInt($track.dataset.id) == trackList[state.currentTrackIndex].id
   )[0];
+  [...$_playlist_tracks.children].map(
+    ($track) =>
+      $track.className.indexOf('playlist__track--current') != -1 &&
+      $track.classList.remove('playlist__track--current')
+  );
+  $currentItem.className.indexOf('playlist__track--current') == -1 &&
+    $currentItem.classList.add('playlist__track--current');
   $currentItem.scrollIntoView({
     behavior: 'smooth',
     block: 'start',
