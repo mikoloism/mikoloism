@@ -151,7 +151,7 @@ function goForward() {
 
   // FIXME : `$audio.pause();` should be before changes
   state.currentTrackIndex +=
-    state.currentTrackIndex + 1 > trackList.length - 1 ? 0 : 1;
+    state.currentTrackIndex + 1 >= trackList.length ? -trackList.length : 1;
   updateMetaData(trackList[state.currentTrackIndex].src);
   $audio.play();
 }
