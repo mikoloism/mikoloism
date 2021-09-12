@@ -226,11 +226,11 @@ const playlistItem = ({ id, src, cover, title, artist }) => {
 };
 function generatePlaylist(tracks = trackList) {
   let $tracks = tracks.map((track) => playlistItem(track));
-  /* let $currentTrack = $tracks.filter(
-    ($track) => $track.dataset.id == tracks[state.currentTrackIndex]
-  )[0]; */
-  return $tracks.map(($track) => append($_playlist_tracks, $track));
-  // $currentTrack.scrollIntoView({ behavior: 'smooth' });
+  let $currentTrack = $tracks.filter(
+    ($track) => $track.dataset.id == tracks[state.currentTrackIndex].id
+  )[0];
+  $tracks.map(($track) => append($_playlist_tracks, $track));
+  return $currentTrack.scrollIntoView({ behavior: 'smooth' });
 }
 
 // +++ EVENT HANDLERS +++ //
