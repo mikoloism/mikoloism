@@ -61,6 +61,7 @@
         id="music-audio"
         src="https://raw.githubusercontent.com/miko-github/miko-github/gh_assets/assets/sounds/Homayoun%20Shajarian%20-%20Arayeshe%20Ghaliz.mp3"
         preload="metadata"
+        volume="0.2"
       ></audio>
       <input
         type="file"
@@ -135,6 +136,14 @@
             <button id="music-playlist-open" class="music__playlist_open">
               <i class="fa fa-list-music"></i>
             </button>
+          </div>
+          <div class="music__volume" title="50%">
+            <button id="music-volume-btn" class="music__volume_btn">
+              <i class="fa fa-volume"></i>
+            </button>
+            <div id="music-volume" class="music__volume_range">
+              <span class="music__volume_handle"></span>
+            </div>
           </div>
 
           <div class="music__times">

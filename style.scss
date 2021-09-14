@@ -15,6 +15,7 @@ $_btn-hover: #e5eff9;
 $_icon-hover: $_cool-blue;
 :root {
   --seek_listener_percentage: 0%;
+  --volume_listener_percentage: 50%;
 }
 
 body {
@@ -196,20 +197,24 @@ body {
   }
 }
 .music {
-  &__mixin {
+  &__mixin,
+  &__volume {
     @include yek-size(50%, 35px);
     @include yek-flex;
+  }
+
+  &__mixin {
     @include yek-aligns(space-between);
     margin-left: -6px;
   }
 
-  &__volume,
+  &__volume_btn,
   &__shuffle,
   &__repeat,
   &__playlist_open {
     @include --clear-btn;
     @include --clear-btn-2;
-    @include yek-size(33.33%, 25px);
+    @include yek-height(25px);
     background-color: transparent;
 
     & i {
@@ -222,6 +227,12 @@ body {
     &--on i {
       color: $_icon-hover;
     }
+  }
+
+  &__shuffle,
+  &__repeat,
+  &__playlist_open {
+    @include yek-width(33.33%);
   }
 }
 
@@ -274,6 +285,35 @@ body {
   &__seek:hover,
   &__seek:hover &__seek_handle {
     @include yek-height(5px);
+  }
+}
+
+/** +++ VOLUME +++ **/
+.music {
+  &__volume {
+    @include yek-aligns;
+  }
+
+  &__volume_btn {
+    @include yek-width(30%);
+    transform: translate(-7px, -25%);
+  }
+  &__volume_range {
+    @include yek-size(60%);
+    transform: translateY(-70%);
+    background-color: $_cool-sky;
+  }
+  &__volume_handle {
+    @include yek-width(var(--volume_listener_percentage));
+    display: block;
+    background-color: $_cool-blue;
+  }
+  &__volume_range,
+  &__volume_handle {
+    @include yek-height(3px);
+    border-radius: 9px;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
   }
 }
 

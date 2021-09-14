@@ -6,6 +6,8 @@ const $_play = query('#music-play');
 const $_forward = query('#music-forward');
 const $_backward = query('#music-backward');
 const $_seek = query('#music-seek');
+const $_volume = query('#music-volume');
+const $_volume_btn = query('#music-volume-btn');
 const $_duration = query('#music-duration');
 const $_currentTime = query('#music-current-time');
 const $_cover = query('#music-cover');
@@ -20,6 +22,7 @@ const $_playlist_tracks = query('#playlist-tracks');
 const $audio = query('#music-audio');
 // is-state
 const state = {
+  lastVolume: 0.5,
   currentTrackIndex: 0,
   repeatCount: 2,
   isShuffle: false,
@@ -207,6 +210,7 @@ function updateRepeat({ repeatCount }) {
     ? $_repeat.firstElementChild.classList.replace('fa-repeat', 'fa-repeat-1')
     : $_repeat.firstElementChild.classList.replace('fa-repeat-1', 'fa-repeat');
 }
+
 function goCurrentPlaylistItem() {
   let $currentItem = [...$_playlist_tracks.children].filter(
     ($track) =>
@@ -225,33 +229,52 @@ function goCurrentPlaylistItem() {
     inline: 'nearest',
   });
 }
+function muteVolume() {
+  let $this = $_volume_btn.firstElementChild;
+  fixVariable('volume_listener_percentage', `0%`);
+  $this.classList.remove('fa-volume');
+  $this.classList.add('fa-volume-mute');
+  $audio.volume = 0;
+}
+function unMuteVolume() {
+  let $this = $_volume_btn.firstElementChild;
+  fixVariable(
+    'volume_listener_percentage',
+    `${fixFloat(state.lastVolume * 100, 3)}%`
+  );
+  $audio.volume = state.lastVolume;
+  $this.classList.remove('fa-volume-mute');
+  $this.classList.add('fa-volume');
+}
+
+// listener(window, 'load', () => ($audio.volume = 0.5));
 
 // TODO : playlist
-const playlistItem = ({ id, src, cover, title, artist }) => {
-  const bem = 'playlist';
-  return createElement(
-    'li',
-    {
-      class: `${bem}__track`,
-      id: `playlist-track-${id}`,
-      'data-src': src,
-      'data-id': id,
-    },
-    [
-      createElement('img', {
-        src: cover,
-        class: `${bem}__cover`,
-        alt: `cover of ${title} from ${fixArtist(artist)}`,
-      }),
-      createElement('div', { class: `${bem}__meta` }, [
-        // TOGGLE : [h3:strong]
-        createElement('strong', { class: `${bem}__title` }, title),
-        createElement('span', { class: `${bem}__artist` }, fixArtist(artist)),
-      ]),
-    ]
-  );
-};
 function generatePlaylist(tracks = trackList) {
+  const playlistItem = ({ id, src, cover, title, artist }) => {
+    const bem = 'playlist';
+    return createElement(
+      'li',
+      {
+        class: `${bem}__track`,
+        id: `playlist-track-${id}`,
+        'data-src': src,
+        'data-id': id,
+      },
+      [
+        createElement('img', {
+          src: cover,
+          class: `${bem}__cover`,
+          alt: `cover of ${title} from ${fixArtist(artist)}`,
+        }),
+        createElement('div', { class: `${bem}__meta` }, [
+          // TOGGLE : [h3:strong]
+          createElement('strong', { class: `${bem}__title` }, title),
+          createElement('span', { class: `${bem}__artist` }, fixArtist(artist)),
+        ]),
+      ]
+    );
+  };
   let $tracks = tracks.map((track) => playlistItem(track));
   $tracks.map(($track) => append($_playlist_tracks, $track));
   return goCurrentPlaylistItem();
@@ -373,10 +396,35 @@ listener($_seek, 'click', (ev) => {
   // calc motion
   let percentage = fixPercentage(value, max);
   // TOGGLE
-  fixVariable('--seek_listener_percentage', `${percentage}%`);
+  fixVariable('seek_listener_percentage', `${percentage}%`);
   // calc value
   let amount = fixFloat((percentage / 100) * parseFloat($audio.duration), 3);
   $audio.currentTime = amount;
+});
+
+// [volume]:seeked
+listener($_volume, 'click', (ev) => {
+  let { offsetX: value } = ev;
+  let { offsetWidth: max } = $_volume;
+  // calc motion
+  let percentage = fixPercentage(value, max);
+  // TOGGLE
+  fixVariable('volume_listener_percentage', `${percentage}%`);
+  // calc value
+  let amount = fixFloat(percentage / 100, 3);
+  if ($audio.volume <= 0.1) return muteVolume();
+  $audio.volume = amount;
+});
+listener($audio, 'volumechange', () => {
+  $_volume.setAttribute(`title`, `${fixFloat($audio.volume * 100, 3)}%`);
+});
+listener($_volume_btn, 'click', () => {
+  $_volume_btn.firstElementChild.className.indexOf(`fa-volume-mute`) != -1
+    ? unMuteVolume()
+    : (() => {
+        state.lastVolume = $audio.volume >= 0.1 ? $audio.volume : 0.1;
+        muteVolume();
+      })();
 });
 
 // [backward]:click
