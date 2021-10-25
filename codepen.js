@@ -1,3 +1,4 @@
+/* [ VERSION : 1.1.0 ] */
 // this file used on codepen as utilities
 // powered by MIKOLOISM
 
