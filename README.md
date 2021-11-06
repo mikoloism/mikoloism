@@ -32,7 +32,7 @@ Hi there 👋
 
 <!-- Connect with me -->
 
-### Connect with me :
+### Connect with me
 
 <a href="mailto:mikoloism.github@gmail.com" target="blank" title="mikoloism.github@gmail.com">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/gmail_icon_130929.png" alt="gmail" />
@@ -65,12 +65,11 @@ Hi there 👋
 
 <!-- GitHub stats -->
 
-<h3> My GitHub Statistics</h3>
+<h3>My GitHub Statistics</h3>
 
 <p>
 <!-- GitHub Stats -->
 <img height="180em" src="https://github-readme-stats.vercel.app/api?username=miko-github&show_icons=true&hide_border=true" />
-
 <!-- Most Used Languages -->
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&exclude_repo=KNN-Image-Classification&show_icons=true&hide_border=true&layout=compact&langs_count=8"/>
 
