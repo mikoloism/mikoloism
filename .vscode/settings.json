@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    ".vscode": true,
+    "_codepen.scss": true,
+    ".prettierrc": true,
+    "style.css": true,
+    ".gitignore": true,
+    "README.md": false,
+    "LICENSE": true,
+    "TODO": true,
+    "screenshots/Screenshot from 2021-08-22 00-20-53.png": true,
+    "_miko-github": true,
+    "package.json": true
+  },
+  "explorerExclude.backup": null
+}
