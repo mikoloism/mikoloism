@@ -40,10 +40,10 @@ Hi there 👋
 <a href="https://instagram.com/mikoloism" target="blank" title="instagram | mikoloism">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/instagram_icon_130905.png" alt="instagram" />
 </a>
-<a href="" target="blank" title="github.com | miko-github">
+<a href="https://github.com/miko-github" target="blank" title="github.com | miko-github">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/github_icon_130931.png" alt="github.com" />
 </a>
-<a href="" target="blank" title="codepen.io | miko-github">
+<a href="https://codepen.io/miko-github" target="blank" title="codepen.io | miko-github">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/codepen_icon_130968.png" alt="codepen.io" />
 </a>
 <!--
