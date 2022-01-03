@@ -54,7 +54,7 @@
         overflow: hidden;
       }
       
-      #view {
+      iframe#view {
         display: flex;
         width: 100%;
         height: calc(100% + var(--fix-size));
@@ -64,7 +64,7 @@
     outline: none;
     box-shadow: none;
     margin: auto;
-    margin-top: calc(-1px * var(--fix-size));
+    margin-top: calc(var(--fix-size) * -1);
       }
     </style>
     <iframe id="view" src="https://codepen.io/miko-github/full/XWeEpOR"></iframe>
