@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- # Codepen Base # -->
+    <meta charset="UTF-8" />
+    <title>Mikoloism - Fullstack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
+    />
+    <link
+      rel="mask-icon"
+      type=""
+      href="https://raw.githubusercontent.com/miko-github/miko-github/gh_page/assets/image.png"
+      color="#111"
+    />
+    <link rel="icon" href="./assets/image.png" />
+    <meta name="description" content="Mikoloism - Fullstack Developer" />
+    <meta property="og:title" content="Mikoloism - Fullstack Developer" />
+    <meta property="og:description" content="Mikoloism - Fullstack Developer" />
+    <meta property="og:image" content="./assets/image.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body translate="no">
+    <div class="yek-app">
+      <div class="yek-app__ctrl">
+        <button type="button" class="yek-app__toggle yek-app__toggle--preview">
+          <!-- fa-edit -->
+          <i class="fa fa-eye"></i>
+          <!-- Edit -->
+          <span>Preview</span>
+        </button>
+      </div>
+      <div id="app-themes" class="yek-app__themes">
+        <label>
+          <input
+            type="radio"
+            class="yek-app__theme"
+            name="app-themes"
+            value=""
+          />
+          <span> Default </span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            class="yek-app__theme"
+            name="app-themes"
+            value="light"
+            checked="checked"
+          />
+          <span> Light </span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            class="yek-app__theme"
+            name="app-themes"
+            value="dark"
+          />
+          <span> Dark </span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            class="yek-app__theme"
+            name="app-themes"
+            value="violet"
+          />
+          <span> Violet </span>
+        </label>
+      </div>
+      <div class="yek-app__preview">
+        <div id="profile-container" class="yek-app__profile">
+          <div id="profile" class="yek-profile yek-profile--theme_light">
+            <div class="yek-profile__card">
+              <span id="profile-pro" class="yek-profile__pro"> Dev </span>
+              <img
+                id="profile-pic"
+                class="yek-profile__pic"
+                width="128"
+                height="128"
+                alt="Miko Mikoloism"
+                src="./assets/image.png"
+              />
+
+              <h3 id="profile-name" class="yek-profile__name">
+                Miko Mikoloism
+              </h3>
+              <h6 id="profile-city" class="yek-profile__city">Iran - Qom</h6>
+              <p id="profile-desc" class="yek-profile__description">
+                Fullstack Developer
+              </p>
+              <div id="profile-buttons" class="yek-profile__buttons">
+                <a
+                  href="https://codepen.io/miko-github"
+                  target="__blank"
+                  class="yek-profile__button"
+                >
+                  Codepen
+                </a>
+                <a
+                  href="https://github.com/miko-github"
+                  target="__blank"
+                  class="yek-profile__button yek-profile__button--primary"
+                >
+                  GitHub
+                </a>
+              </div>
+              <div class="yek-profile__skills">
+                <h6 class="yek-profile__skills_title">Skills</h6>
+                <ul id="profile-skills" class="yek-profile__skills_items">
+                  <li class="yek-profile__skills_item">Javascript</li>
+                  <li class="yek-profile__skills_item">Typescript</li>
+                  <li class="yek-profile__skills_item">ReactJS</li>
+                  <li class="yek-profile__skills_item">Vue</li>
+                  <li class="yek-profile__skills_item">ExpressJS</li>
+                  <li class="yek-profile__skills_item">ElectronJS</li>
+                  <li class="yek-profile__skills_item">Ionic Framework</li>
+                  <li class="yek-profile__skills_item">HTML / CSS</li>
+                  <li class="yek-profile__skills_item">PostgreSQL</li>
+                  <li class="yek-profile__skills_item">Sass / SCSS</li>
+                  <li class="yek-profile__skills_item">Bootstrap</li>
+                  <li class="yek-profile__skills_item">MySQL</li>
+                  <li class="yek-profile__skills_item">MongoDB / Mongoose</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-8216c69d01441f36c0ea791ae2d4469f0f8ff5326f00ae2d00e4bb7d20e24edb.js"></script>
+    <script>
+      (function () {
+        var links = document.querySelectorAll("a[href]");
+        links.forEach(function (link) {
+          var href = link.getAttribute("href");
+          if (href.indexOf("#") !== 0) {
+            link.addEventListener("click", function (event) {
+              event.preventDefault();
+            });
+          }
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      // theme-select //
+      function $theme($_element, theme) {
+        let regex = /--theme_([\w\s\d]{0,})$/gi;
+        $_element.className = $_element.className.replace(
+          regex,
+          `--theme_${theme}`
+        );
+      }
+      const $_theme = document.querySelector("#app-themes");
+      $_theme.onchange = function ({ target: { value } }) {
+        // dataset.metadata.theme = value;
+        $theme(document.querySelector("#profile"), value);
+      };
+      // # sourceURL=pen.js
+    </script>
+    <!--
+    All rights reserved &copy; 2021
+    -
+    Created With &heart; by [https://github.com/miko-github]
+    —
+    Design made by Ildiesign [https://dribbble.com/shots/6276930-Profile-Card-UI-Design]
+     —
+    Powered by T3MPL [https://t3mpl.n4no.com/]
+    -->
+  </body>
+</html>
