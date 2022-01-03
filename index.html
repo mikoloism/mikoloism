@@ -39,6 +39,10 @@
   </head>
   <body translate="no">
     <style type="text/css">
+      :root {
+        --fix-size: 61px;
+      }
+      
       body {
         display: flex;
         flex-direction: column;
@@ -49,22 +53,18 @@
         height: 100vh;
         overflow: hidden;
       }
-      #view {
-        width: 100%;
-        height: calc(100% - 1px);
-        padding: 0;
-        border: none;
-        stroke: none;
-        outline: none;
-        box-shadow: none;
-        margin: auto;
-        margin-top: -56px;
-      }
       
-      @media (max-width: 850px){
-        #view {
-          margin-top: -50px;
-        }
+      #view {
+        display: flex;
+        width: 100%;
+        height: calc(100% + var(--fix-size));
+        padding: 0;
+    border: none;
+    stroke: none;
+    outline: none;
+    box-shadow: none;
+    margin: auto;
+    margin-top: calc(-1px * var(--fix-size));
       }
     </style>
     <iframe id="view" src="https://codepen.io/miko-github/full/XWeEpOR"></iframe>
