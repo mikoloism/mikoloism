@@ -46,6 +46,9 @@ Hi there 👋
 <a href="https://codepen.io/miko-github" target="blank" title="codepen.io | miko-github">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/codepen_icon_130968.png" alt="codepen.io" />
 </a>
+<a href="https://twitter.com/mikoloism" target="blank" title="twitter | @mikoloism">
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/twitter_icon_130806.png" alt="twitter" />
+</a>
 <!--
 <a href="https://dev.to/" target="blank" title="dev.to | {USER_NAME}">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/dev_to_icon_130961.png" alt="dev.to" />
