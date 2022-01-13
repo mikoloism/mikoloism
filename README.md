@@ -14,6 +14,10 @@ Hi there 👋
 <!-- welcome message -->
 <h2>Hi there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></h2>
 
+<p>
+<!-- TODO -->
+</p>
+
 <a href="https://github.com/miko-github/miko-github/stargazers" title="github stars">
 	<img src="https://img.shields.io/github/stars/miko-github/vueStoreDashboard.svg?style=social&label=Star&maxAge=2592000" alt="github stars" />
 </a>
