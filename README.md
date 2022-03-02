@@ -2,6 +2,11 @@
 Hi there 👋
 -->
 
+### Who AM I?
+my name is MIKO and I'm a Web Developer who want to be the best and trying to be it.\
+I'm here, to making somethings cool and fun and exactly usable in Real-World to make\
+developing fater and easier thn past, something like [Yek](https://github.com/yek-org) and their tools and feature like [@yek/sass](https://www.npmjs.com/package/@yek/sass "NPM Package")(library of mixins and useful function for sass/scss)
+
 <p align="center">
 	<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/opensource_logo_icon_169884.png" alt="banner" width="550" height="270" />
 </p>
