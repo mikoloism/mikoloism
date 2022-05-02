@@ -17,13 +17,18 @@ Hi there 👋
 #### Who AM I?
 My name is **Mahdi** (or some where Mehdi),\
 I'm **Creative Hunter** for everything, creative idea, creative solution for a problem and or a how to fix this bug and any more.\
-I Love to find and search about new way to solving problems as creativly and research about everything related to the Developing of the World. also I try to use every things as **Clean**\
+I Love to find and search about new way to solving problems as creativly and research about everything related to the Developing of the World. also I try to use every things as **Clean**
+
+<details>
+	<summary>the clean list</summary>
 
 - Clean Code
 - Clean Architucure
 - Clean Commits Message (how write commit messages)
 - Clean Documentation (how to explain the any project)
 - and more same clean
+	
+</details>
 
 😉 👍
 
