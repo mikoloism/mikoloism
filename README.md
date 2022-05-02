@@ -15,10 +15,17 @@ Hi there 👋
 <h2>Hi there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"></h2>
 
 #### Who AM I?
-my name is MIKO and I'm a Web Developer who want to be the best and trying to be it.\
-I'm here, to making somethings cool and fun and exactly usable in Real-World to make\
-developing fater and easier thn past, something like [YEK](https://github.com/yek-org) and their tools and feature like\
-[@yek/sass](https://www.npmjs.com/package/@yek/sass "NPM Package") (a library of mixins and useful function for sass/scss)
+My name is **Mahdi** (or some where Mehdi),\
+I'm **Creative Hunter** for everything, creative idea, creative solution for a problem and or a how to fix this bug and any more.\
+I Love to find and search about new way to solving problems as creativly and research about everything related to the Developing of the World. also I try to use every things as **Clean**\
+
+- Clean Code
+- Clean Architucure
+- Clean Commits Message (how write commit messages)
+- Clean Documentation (how to explain the any project)
+- and more same clean
+
+😉 👍
 
 
 <p>
@@ -45,6 +52,9 @@ developing fater and easier thn past, something like [YEK](https://github.com/ye
 
 ### Connect with me
 
+<a href="https://linkedin.com/in/mikoloism" target="blank" title="linkedin | Mahdi E.">
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/linkedin_icon_130888.png" alt="linkedin" />
+</a>
 <a href="mailto:mikoloism.github@gmail.com" target="blank" title="mikoloism.github@gmail.com">
 	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/gmail_icon_130929.png" alt="gmail" />
 </a>
