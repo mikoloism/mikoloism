@@ -19,7 +19,7 @@ My name is **Mahdi** (or some where Mehdi),\
 I'm **Creative Hunter** for everything, creative idea, creative solution for a problem and or a how to fix this bug and any more.\
 I Love to find and search about new way to solving problems as creativly and research about everything related to the Developing of the World. also I try to use every things as **Clean**
 
-<details>
+<!-- <details>
 	<summary>the clean list</summary>
 
 - Clean Code
@@ -28,7 +28,7 @@ I Love to find and search about new way to solving problems as creativly and res
 - Clean Documentation (how to explain the any project)
 - and more same clean
 	
-</details>
+</details> -->
 
 😉 👍
 
