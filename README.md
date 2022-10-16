@@ -16,8 +16,7 @@ Hi there 👋
 
 #### Who AM I?
 My name is **Mahdi** (or some where Mehdi),\
-I'm **Creative Hunter** for everything, creative idea, creative solution for a problem and or a how to fix this bug and any more.\
-I Love to find and search about new way to solving problems as creativly and research about everything related to the Developing of the World. also I try to use every things as **Clean**
+Front-end Developer, who love to grow Javascript ecosystem to solve the problems, find answer for questions, search solutaion for things to make their better than ever.
 
 <!-- <details>
 	<summary>the clean list</summary>
@@ -90,16 +89,24 @@ I Love to find and search about new way to solving problems as creativly and res
 </a>
 -->
 
+<!--
 ---
+-->
 
 <!-- GitHub stats -->
 
+<!--
 <h3>My GitHub Statistics</h3>
+-->
 
 <p>
 <!-- GitHub Stats -->
+<!--
 <img height="180em" src="https://github-readme-stats.vercel.app/api?username=miko-github&show_icons=true&hide_border=true" />
+-->
 <!-- Most Used Languages -->
+<!--
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=miko-github&exclude_repo=KNN-Image-Classification&show_icons=true&hide_border=true&layout=compact&langs_count=8"/>
+-->
 
 </p>
