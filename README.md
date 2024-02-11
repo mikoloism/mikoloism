@@ -1,10 +1,10 @@
 <!--
 Hi there 👋
--->
+
 <p align="center">
 	<img src="https://github.com/mikoloism/mikoloism/assets/64307152/5a9e702e-45d5-4123-bb2e-c4e2f49f9cd3" alt="banner" />
 </p>
-
+-->
 <!-- welcome message -->
 <h2>Hi there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" height="25px" width="25px"></h2>
 
