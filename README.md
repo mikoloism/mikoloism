@@ -25,7 +25,7 @@ SOFTWARE ENGINEER, who love to grow in Javascript ecosystem and solve the proble
 
 <!-- Languages and tools -->
 
-### Languages and Tools
+<!-- ### Languages and Tools -->
 
 <!-- <img width="40" height="40" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/opensource_icon_130864.png" alt="opensource" /> -->
 <!-- disabled
