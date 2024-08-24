@@ -38,28 +38,31 @@ SOFTWARE ENGINEER, who love to grow in Javascript ecosystem and solve the proble
 
 <p>
 <a href="https://github.com/mikoloism" target="blank" title="github.com | mikoloism">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/github_icon_130931.png" alt="github.com" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/github_icon_130931.png" alt="GitHub" />
 </a>
 <a href="https://codepen.io/mikoloism" target="blank" title="codepen.io | mikoloism">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/codepen_icon_130968.png" alt="codepen.io" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/codepen_icon_130968.png" alt="Codepen" />
 </a>
 <a href="https://codepen.io/miko-github" target="blank" title="codepen.io | mikoloism (legacy)">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/1293/PNG/512/2363346-box-codepen_85473.png" alt="codepen.io" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/1293/PNG/512/2363346-box-codepen_85473.png" alt="Codepen" />
 </a>
 <a href="https://dev.to/mikoloism" target="blank" title="dev.to | mikoloism">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/dev_to_icon_130961.png" alt="dev.to" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/dev_to_icon_130961.png" alt="Dev.to" />
 </a>
 <a href="https://linkedin.com/in/mikoloism" target="blank" title="linkedin | Mahdi E.">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/linkedin_icon_130888.png" alt="linkedin" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/linkedin_icon_130888.png" alt="Linkedin" />
 </a>
 <a href="https://twitter.com/mikoloism" target="blank" title="twitter | @mikoloism">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/twitter_icon_130806.png" alt="twitter" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/twitter_icon_130806.png" alt="Twitter" />
 </a>
 <a href="https://instagram.com/mikoloism" target="blank" title="instagram | mikoloism">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/instagram_icon_130905.png" alt="instagram" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/instagram_icon_130905.png" alt="Instagram" />
 </a>
 <a href="mailto:mikoloism@gmail.com" target="blank" title="mikoloism@gmail.com">
-	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/gmail_icon_130929.png" alt="gmail" />
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/gmail_icon_130929.png" alt="Gmail" />
+</a>
+<a rel="me" href="https://mastodon.social/@mikoloism">
+	<img width="30" height="30" src="https://cdn.icon-icons.com/icons2/2108/PNG/128/mastodon_icon_130879.png" alt="Mastodon" />
 </a>
 <!--
 <a href="" target="blank" title="reddit | {USER_NAME}">
