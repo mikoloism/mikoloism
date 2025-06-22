@@ -9,7 +9,7 @@ Hi there 👋
 <h2>Hi there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" height="25px" width="25px"></h2>
 
 #### Who AM I?
-My name is **Mahdi** (or some where Mehdi),\
+My name is **Mahid**,\
 SOFTWARE ENGINEER, who love to grow in Javascript ecosystem and solve the problems, find answer for questions, also research solutaions about things to make these better than ever.
 
 <!-- <details>
