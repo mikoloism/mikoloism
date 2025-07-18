@@ -3,7 +3,7 @@ $ whoami
 > Mikoloism (Mahdi I.A.)
 
 $ profile --info
-> Software Engineer | JavaScript Wizard
+> Software Engineer | Typescript Wizard
 > Passionate about solving problems
 > Always chasing better solutions
 
