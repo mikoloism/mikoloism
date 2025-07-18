@@ -17,16 +17,16 @@ $ connect --socials
   https://github.com/mikoloism
 > Codepen: mikoloism
   https://codepen.io/mikoloism
-> Dev.to: mikoloism
-  https://dev.to/mikoloism
 > LinkedIn: Mikoloism (Mahdi I.A.)
   https://linkedin.com/in/mikoloism
 > Twitter: @mikoloism
   https://twitter.com/mikoloism
-> Instagram: mikoloism
-  https://instagram.com/mikoloism
 > Gmail: mikoloism@gmail.com
   mailto:mikoloism@gmail.com
+> Dev.to: mikoloism
+  https://dev.to/mikoloism
+> Instagram: mikoloism
+  https://instagram.com/mikoloism
 > Mastodon: @mikoloism
   https://mastodon.social/@mikoloism
 
