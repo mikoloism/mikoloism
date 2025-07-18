@@ -1,9 +1,9 @@
 ```bash
 $ whoami
-Mikoloism (Mahdi I.A.)
+> Mikoloism (Mahdi I.A.)
 
 $ profile --info
-> Software Engineer | Typescript Wizard
+> Software Engineer | JavaScript Wizard
 > Passionate about solving problems
 > Always chasing better solutions
 
@@ -13,14 +13,22 @@ $ skills --list
 > Creative Problem Solving
 
 $ connect --socials
-$ git clone https://github.com/mikoloism       # GitHub:    mikoloism
-$ open https://codepen.io/mikoloism            # Codepen:   mikoloism
-$ curl https://dev.to/mikoloism                # Dev.to:    mikoloism
-$ ping https://linkedin.com/in/mikoloism       # LinkedIn:  Mikoloism
-$ tweet https://twitter.com/mikoloism          # Twitter:  @mikoloism
-$ post https://instagram.com/mikoloism         # Instagram: mikoloism
-$ mail mikoloism@gmail.com                     # Gmail:     mikoloism@gmail.com
-$ toot https://mastodon.social/@mikoloism      # Mastodon: @mikoloism
+> GitHub: mikoloism
+  https://github.com/mikoloism
+> Codepen: mikoloism
+  https://codepen.io/mikoloism
+> Dev.to: mikoloism
+  https://dev.to/mikoloism
+> LinkedIn: Mikoloism (Mahdi I.A.)
+  https://linkedin.com/in/mikoloism
+> Twitter: @mikoloism
+  https://twitter.com/mikoloism
+> Instagram: mikoloism
+  https://instagram.com/mikoloism
+> Gmail: mikoloism@gmail.com
+  mailto:mikoloism@gmail.com
+> Mastodon: @mikoloism
+  https://mastodon.social/@mikoloism
 
 $ status --current
 > Ready to code, connect, and create something dope. Hit me up!
